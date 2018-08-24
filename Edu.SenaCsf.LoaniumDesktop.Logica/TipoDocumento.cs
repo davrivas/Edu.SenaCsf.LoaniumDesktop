@@ -22,5 +22,9 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public int Id { get => id; set => id = value; }
         public string Tipo { get => tipo; set => tipo = value; }
         public string Sigla { get => sigla; set => sigla = value; }
+
+        public List<TipoDocumento> MostrarTodos() {
+            return new List<TipoDocumento>();
+        }
     }
 }

@@ -19,5 +19,9 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
 
         public int Id { get => id; set => id = value; }
         public string Tipo { get => tipo; set => tipo = value; }
+
+        public List<TipoPQRS> MostrarTodos() {
+            return new List<TipoPQRS>();
+        }
     }
 }

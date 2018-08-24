@@ -22,5 +22,15 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public int Id { get => id; set => id = value; }
         public string NombreIdioma { get => nombreIdioma; set => nombreIdioma = value; }
         public string Sigla { get => sigla; set => sigla = value; }
+
+        public void IngresarIdioma(Idioma i) { }
+
+        public void ModificarIdioma(Idioma i) { }
+
+        public void EliminarIdioma(Idioma i) { }
+
+        public List<Idioma> MostrarTodos() {
+            return new List<Idioma>();
+        }
     }
 }
