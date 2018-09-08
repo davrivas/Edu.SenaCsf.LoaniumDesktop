@@ -4,9 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edu.SenaCsf.LoaniumDesktop.Datos
-{
-    public class Class1
-    {
+namespace Edu.SenaCsf.LoaniumDesktop.Datos {
+    public class Conexion {
     }
 }

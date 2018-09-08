@@ -54,7 +54,6 @@
     <Compile Include="Material.cs" />
     <Compile Include="MotivoRechazo.cs" />
     <Compile Include="Observacion.cs" />
-    <Compile Include="Permiso.cs" />
     <Compile Include="PQRS.cs" />
     <Compile Include="Prestamo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
