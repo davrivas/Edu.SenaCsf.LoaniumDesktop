@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edu.SenaCsf.LoaniumDesktop.Logica.Interfaces {
+namespace Edu.SenaCsf.LoaniumDesktop.Logica.InterfacesDAO {
     interface IPrestamoDAO : IDAO<PrestamoDAO> {
         List<PrestamoDAO> MostrarPorUsuario(UsuarioDAO u);
     }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edu.SenaCsf.LoaniumDesktop.Logica {
+namespace Edu.SenaCsf.LoaniumDesktop.Logica.InterfacesDAO {
     public interface IDAO<T> {
         void Ingresar(T obj);
         void Editar(T obj);
