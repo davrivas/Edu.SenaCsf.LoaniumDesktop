@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
     public class MotivoRechazoDAO {
-        public List<MotivoRechazoDAO> MostrarTodos() {
-            return null;
-        }
     }
 }

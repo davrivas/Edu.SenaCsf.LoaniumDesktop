@@ -6,5 +6,6 @@ using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica.Interfaces {
     interface IPQRSDAO : IDAO<PQRSDAO> {
+        void ResponderPQRS(PQRSDAO pqrs);
     }
 }

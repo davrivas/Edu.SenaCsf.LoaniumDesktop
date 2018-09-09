@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
     class TipoPQRSDAO {
-        public List<TipoPQRSDAO> MostrarTodos() {
-            return null;
-        }
     }
 }

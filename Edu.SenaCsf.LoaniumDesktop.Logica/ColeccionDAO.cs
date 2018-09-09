@@ -6,25 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
-    public class ColeccionDAO : IColeccionDAO {
-        public ColeccionDAO BuscarPorId(int id) {
-            throw new NotImplementedException();
-        }
-
-        public void Editar(ColeccionDAO obj) {
-            throw new NotImplementedException();
-        }
-
-        public void Eliminar(ColeccionDAO obj) {
-            throw new NotImplementedException();
-        }
-
-        public void Ingresar(ColeccionDAO obj) {
-            throw new NotImplementedException();
-        }
-
-        public List<ColeccionDAO> MostrarTodos() {
-            throw new NotImplementedException();
-        }
+    public class ColeccionDAO {
+        
     }
 }

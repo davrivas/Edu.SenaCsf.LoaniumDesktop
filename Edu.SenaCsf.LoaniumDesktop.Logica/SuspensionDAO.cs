@@ -6,8 +6,5 @@ using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
     public class SuspensionDAO {
-        public List<SuspensionDAO> MostrarTodas() {
-            return null;
-        }
     }
 }
