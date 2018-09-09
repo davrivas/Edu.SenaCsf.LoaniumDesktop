@@ -9,5 +9,18 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         private int id;
         private int numeroDewey;
         private string nombreTematica;
+
+        public TematicaDTO() {
+        }
+
+        public TematicaDTO(int id, int numeroDewey, string nombreTematica) {
+            this.Id = id;
+            this.NumeroDewey = numeroDewey;
+            this.NombreTematica = nombreTematica;
+        }
+
+        public int Id { get => id; set => id = value; }
+        public int NumeroDewey { get => numeroDewey; set => numeroDewey = value; }
+        public string NombreTematica { get => nombreTematica; set => nombreTematica = value; }
     }
 }

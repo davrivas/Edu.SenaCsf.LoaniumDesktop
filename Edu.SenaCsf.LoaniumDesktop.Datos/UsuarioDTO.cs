@@ -16,5 +16,31 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         private TipoDocumentoDTO tipoDocumento;
         private TipoUsuarioDTO tipoUsuario;
         private EstadoUsuarioDTO estadoUsuario;
+
+        public UsuarioDTO() {
+        }
+
+        public UsuarioDTO(int id, string nombres, string apellidos, string documento, string correoElectronico, string clave, TipoDocumentoDTO tipoDocumento, TipoUsuarioDTO tipoUsuario, EstadoUsuarioDTO estadoUsuario) {
+            this.Id = id;
+            this.Nombres = nombres;
+            this.Apellidos = apellidos;
+            this.Documento = documento;
+            this.CorreoElectronico = correoElectronico;
+            this.Clave = clave;
+            this.TipoDocumento = tipoDocumento;
+            this.TipoUsuario = tipoUsuario;
+            this.EstadoUsuario = estadoUsuario;
+        }
+
+        public int Id { get => id; set => id = value; }
+        public string Nombres { get => nombres; set => nombres = value; }
+        public string Apellidos { get => apellidos; set => apellidos = value; }
+        public string Documento { get => documento; set => documento = value; }
+        public string CorreoElectronico { get => correoElectronico; set => correoElectronico = value; }
+        public string Clave { get => clave; set => clave = value; }
+        public string Telefono { get => telefono; set => telefono = value; }
+        public TipoDocumentoDTO TipoDocumento { get => tipoDocumento; set => tipoDocumento = value; }
+        public TipoUsuarioDTO TipoUsuario { get => tipoUsuario; set => tipoUsuario = value; }
+        public EstadoUsuarioDTO EstadoUsuario { get => estadoUsuario; set => estadoUsuario = value; }
     }
 }

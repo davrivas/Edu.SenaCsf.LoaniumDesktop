@@ -45,6 +45,8 @@
     <Compile Include="Donacion.cs" />
     <Compile Include="EjemplarMaterial.cs" />
     <Compile Include="Idioma.cs" />
+    <Compile Include="Interfaces\IColeccionDAO.cs" />
+    <Compile Include="Interfaces\IDAO.cs" />
     <Compile Include="Libro.cs" />
     <Compile Include="Material.cs" />
     <Compile Include="MotivoRechazo.cs" />

@@ -6,6 +6,23 @@ using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
     public class DiscoDTO : MaterialDTO {
-        private int duracion;
+        private string duracion;
+
+        public DiscoDTO() : base() {
+        }
+
+        public DiscoDTO(int id, string titulo, string autor, DateTime fechaPublicacion, string descripcion, IdiomaDTO idioma, TipoMaterialDTO tipoMaterial, List<EjemplarMaterialDTO> ejemplares, string duracion) : base(id, titulo, autor, fechaPublicacion, descripcion, idioma, tipoMaterial, ejemplares) {
+            this.Id = id;
+            this.Titulo = titulo;
+            this.Autor = autor;
+            this.FechaPublicacion = fechaPublicacion;
+            this.Descripcion = descripcion;
+            this.Idioma = idioma;
+            this.TipoMaterial = tipoMaterial;
+            this.Ejemplares = ejemplares;
+            this.Duracion = duracion;
+        }
+
+        public string Duracion { get => duracion; set => duracion = value; }
     }
 }

@@ -12,6 +12,26 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         private EstadoPrestamoDTO estadoPrestamo;
         private UsuarioDTO usuario;
         private List<EjemplarMaterialDTO> ejemplares;
-        private List<ObservacionDTO> observaciones;
+        private ObservacionDTO observaciones;
+
+        public PrestamoDTO() {
+        }
+
+        public PrestamoDTO(int id, DateTime fechaPrestamo, DateTime fechaDevolucion, EstadoPrestamoDTO estadoPrestamo, UsuarioDTO usuario, List<EjemplarMaterialDTO> ejemplares) {
+            this.Id = id;
+            this.FechaPrestamo = fechaPrestamo;
+            this.FechaDevolucion = fechaDevolucion;
+            this.EstadoPrestamo = estadoPrestamo;
+            this.Usuario = usuario;
+            this.Ejemplares = ejemplares;
+        }
+
+        public int Id { get => id; set => id = value; }
+        public DateTime FechaPrestamo { get => fechaPrestamo; set => fechaPrestamo = value; }
+        public DateTime FechaDevolucion { get => fechaDevolucion; set => fechaDevolucion = value; }
+        public EstadoPrestamoDTO EstadoPrestamo { get => estadoPrestamo; set => estadoPrestamo = value; }
+        public UsuarioDTO Usuario { get => usuario; set => usuario = value; }
+        public List<EjemplarMaterialDTO> Ejemplares { get => ejemplares; set => ejemplares = new List<EjemplarMaterialDTO>(3); }
+        public ObservacionDTO Observaciones { get => observaciones; set => observaciones = value; }
     }
 }
