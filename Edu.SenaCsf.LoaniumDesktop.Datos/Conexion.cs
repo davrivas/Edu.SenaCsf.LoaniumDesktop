@@ -9,6 +9,6 @@ using System.Threading.Tasks;
 namespace Edu.SenaCsf.LoaniumDesktop.Datos {
     public class Conexion {
         private static string cadenaConexion = "";
-        private static SqlConnection conexion = new SqlConnection(cadenaConexion);
+        private static SqlConnection conexionSql = new SqlConnection(cadenaConexion);
     }
 }

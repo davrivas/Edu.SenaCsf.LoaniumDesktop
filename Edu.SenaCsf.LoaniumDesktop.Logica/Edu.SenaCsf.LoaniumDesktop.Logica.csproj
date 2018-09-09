@@ -91,6 +91,11 @@
     <Compile Include="TipoUsuarioDAO.cs" />
     <Compile Include="UsuarioDAO.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\Edu.SenaCsf.LoaniumDesktop.Datos\Edu.SenaCsf.LoaniumDesktop.Datos.csproj">
+      <Project>{60738740-69e8-431f-afcb-7d061f4189f8}</Project>
+      <Name>Edu.SenaCsf.LoaniumDesktop.Datos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

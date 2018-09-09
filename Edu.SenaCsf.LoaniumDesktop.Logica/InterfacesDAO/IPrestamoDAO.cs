@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Edu.SenaCsf.LoaniumDesktop.Datos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica.InterfacesDAO {
-    interface IPrestamoDAO : IDAO<PrestamoDAO> {
-        List<PrestamoDAO> MostrarPorUsuario(UsuarioDAO u);
+    internal interface IPrestamoDAO : IDAO<PrestamoDTO> {
+        List<PrestamoDTO> MostrarPorUsuario(UsuarioDTO u);
     }
 }

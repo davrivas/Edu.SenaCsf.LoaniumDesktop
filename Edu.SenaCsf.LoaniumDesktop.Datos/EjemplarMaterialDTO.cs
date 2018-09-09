@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edu.SenaCsf.LoaniumDesktop.Logica {
+namespace Edu.SenaCsf.LoaniumDesktop.Datos {
     public class EjemplarMaterialDTO {
         private int id;
         private string numeroTopografico;
