@@ -44,11 +44,6 @@
     <Compile Include="Disco.cs" />
     <Compile Include="Donacion.cs" />
     <Compile Include="EjemplarMaterial.cs" />
-    <Compile Include="EstadoDonacion.cs" />
-    <Compile Include="EstadoMaterial.cs" />
-    <Compile Include="EstadoPQRS.cs" />
-    <Compile Include="EstadoPrestamo.cs" />
-    <Compile Include="EstadoUsuario.cs" />
     <Compile Include="Idioma.cs" />
     <Compile Include="Libro.cs" />
     <Compile Include="Material.cs" />

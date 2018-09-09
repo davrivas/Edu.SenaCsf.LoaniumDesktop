@@ -5,32 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
-    class Revista : Material {
-        private string issn;
+    public class Revista {
+        public void EliminarRevista(Revista r) { }
 
-        public Revista() : base() {
-        }
+        public void IngresarRevista(Revista r) { }
 
-        public Revista(string issn) /* const padre*/ {
-            this.Issn = issn;
-        }
+        public void ModificarRevista(Material m) { }
 
-        public string Issn { get => issn; set => issn = value; }
-
-        public override void EliminarMaterial(Material m) {
-            throw new NotImplementedException();
-        }
-
-        public override void IngresarMaterial(Material m) {
-            throw new NotImplementedException();
-        }
-
-        public override void ModificarMaterial(Material m) {
-            throw new NotImplementedException();
-        }
-
-        public List<Material> MostrarTodas() {
-            return new List<Material>();
+        public List<Revista> MostrarTodas() {
+            return null;
         }
     }
 }

@@ -5,35 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
-    class Libro : Material {
-        private string isbn;
-        private string editorial;
+    public class Libro {
+        public void EliminarLibro(Libro l) { }
 
-        public Libro() : base() {
-        }
+        public void IngresarLibro(Libro l) { }
 
-        public Libro(string isbn, string editorial) /*const padre*/ {
-            this.Isbn = isbn;
-            this.Editorial = editorial;
-        }
-
-        public string Isbn { get => isbn; set => isbn = value; }
-        public string Editorial { get => editorial; set => editorial = value; }
-
-        public override void EliminarMaterial(Material m) {
-            throw new NotImplementedException();
-        }
-
-        public override void IngresarMaterial(Material m) {
-            throw new NotImplementedException();
-        }
-
-        public override void ModificarMaterial(Material m) {
-            throw new NotImplementedException();
-        }
+        public void ModificarLibro(Libro l) { }
 
         public List<Libro> MostrarTodos() {
-            return new List<Libro>();
+            return null;
         }
     }
 }

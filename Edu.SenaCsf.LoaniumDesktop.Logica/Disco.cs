@@ -5,32 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
-    class Disco : Material {
-        private int duracion;
+    public class Disco {
+        public void EliminarDisco(Disco d) { }
 
-        public Disco() : base() {
-        }
+        public void IngresarDisco(Disco d) { }
 
-        public Disco(int duracion) /* const padre*/ {
-            this.Duracion = duracion;
-        }
-
-        public int Duracion { get => duracion; set => duracion = value; }
-
-        public override void EliminarMaterial(Material m) {
-            throw new NotImplementedException();
-        }
-
-        public override void IngresarMaterial(Material m) {
-            throw new NotImplementedException();
-        }
-
-        public override void ModificarMaterial(Material m) {
-            throw new NotImplementedException();
-        }
+        public void ModificarDisco(Disco d) { }
 
         public List<Disco> MostrarTodos() {
-            return new List<Disco>();
+            return null;
         }
     }
 }
