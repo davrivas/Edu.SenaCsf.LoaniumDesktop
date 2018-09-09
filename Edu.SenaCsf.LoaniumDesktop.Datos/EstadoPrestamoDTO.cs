@@ -5,19 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
-    class EstadoPrestamo {
+    public class EstadoPrestamoDTO {
         private int id;
         private string estado;
-
-        public EstadoPrestamo() {
-        }
-
-        public EstadoPrestamo(int id, string estado) {
-            this.Id = id;
-            this.Estado = estado;
-        }
-
-        public int Id { get => id; set => id = value; }
-        public string Estado { get => estado; set => estado = value; }
     }
 }

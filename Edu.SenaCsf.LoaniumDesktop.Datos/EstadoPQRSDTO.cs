@@ -5,19 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
-    class EstadoPQRS {
+    public class EstadoPQRSDTO {
         private int id;
         private string estado;
-
-        public EstadoPQRS() {
-        }
-
-        public EstadoPQRS(int id, string estado) {
-            this.Id = id;
-            this.Estado = estado;
-        }
-
-        public int Id { get => id; set => id = value; }
-        public string Estado { get => estado; set => estado = value; }
     }
 }
