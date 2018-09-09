@@ -47,11 +47,13 @@
     <Compile Include="EstadoDonacionDAO.cs" />
     <Compile Include="EstadoMaterialDAO.cs" />
     <Compile Include="EstadoPQRSDAO.cs" />
+    <Compile Include="EstadoPrestamoDAO.cs" />
     <Compile Include="EstadoUsuarioDAO.cs" />
     <Compile Include="IdiomaDAO.cs" />
     <Compile Include="InterfacesDAO\IEstadoDonacionDAO.cs" />
     <Compile Include="InterfacesDAO\IEstadoMaterialDAO.cs" />
     <Compile Include="InterfacesDAO\IEstadoPQRSDAO.cs" />
+    <Compile Include="InterfacesDAO\IEstadoPrestamoDAO.cs" />
     <Compile Include="InterfacesDAO\IEstadoUsuarioDAO.cs" />
     <Compile Include="InterfacesDAO\ITipoMaterialDAO.cs" />
     <Compile Include="InterfacesDAO\ITipoPQRSDAO.cs" />
