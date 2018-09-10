@@ -10,6 +10,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         private string nombres;
         private string apellidos;
         private string documento;
+        private DateTime fechaNacimiento;
         private string correoElectronico;
         private string clave;
         private string telefono;
@@ -20,11 +21,12 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         public UsuarioDTO() {
         }
 
-        public UsuarioDTO(int id, string nombres, string apellidos, string documento, string correoElectronico, string clave, TipoDocumentoDTO tipoDocumento, TipoUsuarioDTO tipoUsuario, EstadoUsuarioDTO estadoUsuario) {
+        public UsuarioDTO(int id, string nombres, string apellidos, string documento, DateTime fechaNacimiento, string correoElectronico, string clave, TipoDocumentoDTO tipoDocumento, TipoUsuarioDTO tipoUsuario, EstadoUsuarioDTO estadoUsuario) {
             this.Id = id;
             this.Nombres = nombres;
             this.Apellidos = apellidos;
             this.Documento = documento;
+            this.FechaNacimiento = fechaNacimiento;
             this.CorreoElectronico = correoElectronico;
             this.Clave = clave;
             this.TipoDocumento = tipoDocumento;
@@ -36,6 +38,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         public string Nombres { get => nombres; set => nombres = value; }
         public string Apellidos { get => apellidos; set => apellidos = value; }
         public string Documento { get => documento; set => documento = value; }
+        public DateTime FechaNacimiento { get => fechaNacimiento; set => fechaNacimiento = value; }
         public string CorreoElectronico { get => correoElectronico; set => correoElectronico = value; }
         public string Clave { get => clave; set => clave = value; }
         public string Telefono { get => telefono; set => telefono = value; }
