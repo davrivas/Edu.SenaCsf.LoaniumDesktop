@@ -17,6 +17,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
             try {
                 Conn.Open();
             } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
                 MessageBox.Show("No se pudo conectar a la base de datos");
             }
         }
@@ -25,6 +26,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
             try {
                 Conn.Close();
             } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
                 MessageBox.Show("No se pudo terminar la conexión a la base de datos");
             }
         }

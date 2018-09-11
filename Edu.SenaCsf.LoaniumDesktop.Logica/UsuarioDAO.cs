@@ -38,21 +38,35 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
             throw new NotImplementedException();
         }
 
-        public bool IniciarSesion(int td, string documento, string clave) {
+        public UsuarioDTO IniciarSesion(int td, string documento, string clave) {
             try {
                 Conexion.Abrir();
                 string sql = "SELECT TOP (1) * " +
                     "FROM Usuario " +
                     "WHERE TipoDocumentoId = " + td +" " +
                     "AND Documento = '" + documento + "' " +
-                    "AND Clave = '" + clave + "' " +
-                    "AND EstadoUsuarioId = 1";
+                    "AND Clave = '" + clave + "'";
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                return reader.HasRows ? true : false;
+                if (reader.HasRows) {
+                    return new UsuarioDTO {
+                        Id = Convert.ToInt32(reader["UsuarioId"]),
+                        Nombres = reader["Nombres"].ToString(),
+                        Apellidos = reader["Apellidos"].ToString(),
+                        Documento = reader["Documento"].ToString(),
+                        FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"]),
+                        CorreoElectronico = reader["CorreoElectronico"].ToString(),
+                        Clave = reader["Clave"].ToString(),
+                        Telefono = (reader["Telefono"] == null) ? null : reader["Telefono"].ToString()
+                        //Tipos
+                    };
+                } else {
+                    return null;
+                }
             } catch (SqlException e) {
-                return false;
+                Console.WriteLine(e.StackTrace);
+                return null;
             } finally {
                 if (Conexion.Conn != null) {
                     Conexion.Cerrar();
