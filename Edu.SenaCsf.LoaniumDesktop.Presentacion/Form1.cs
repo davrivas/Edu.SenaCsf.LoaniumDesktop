@@ -23,12 +23,11 @@ namespace Edu.SenaCsf.LoaniumDesktop.Presentacion {
         }
         
         private void ButtonIniciar_Click(object sender, EventArgs e) {
-            UsuarioDAO uDAO = new UsuarioDAO();
             int tipoDocumento = Convert.ToInt32(comboBoxTipoDocumento.SelectedValue);
             string documento = textBoxDocumento.Text;
             string clave = textBoxClave.Text;
 
-            if (uDAO.IniciarSesion(tipoDocumento, documento, clave)) {
+            if (new UsuarioDAO().IniciarSesion(tipoDocumento, documento, clave)/* != null*/) {
                 MessageBox.Show("Inicio de sesión con éxito!");
             } else {
                 MessageBox.Show("ERROR: No se pudo iniciar sesión");
