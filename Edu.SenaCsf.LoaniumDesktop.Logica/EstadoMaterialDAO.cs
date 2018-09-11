@@ -2,6 +2,7 @@
 using Edu.SenaCsf.LoaniumDesktop.Logica.InterfacesDAO;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,31 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         }
 
         public EstadoMaterialDTO BuscarPorId(int id) {
-            throw new NotImplementedException();
+            try {
+                Conexion.Abrir();
+                string sql = "SELECT TOP(1) * " +
+                    "FROM EstadoMaterial " +
+                    "WHERE EstadoMaterialId = " + id;
+                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows) {
+                    EstadoMaterialDTO em = new EstadoMaterialDTO(
+                        Convert.ToInt32(reader["EstadoMaterialId"].ToString()),
+                        reader["EstadoMaterial"].ToString()
+                    );
+                    return em;
+                } else {
+                    return null;
+                }
+            } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
+                return null;
+            } finally {
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
+            }
         }
 
         public void Editar(EstadoMaterialDTO obj) {
@@ -28,7 +53,34 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         }
 
         public List<EstadoMaterialDTO> MostrarTodos() {
-            throw new NotImplementedException();
+            try {
+                Conexion.Abrir();
+                List<EstadoMaterialDTO> estados = new List<EstadoMaterialDTO>();
+                string sql = "SELECT * " +
+                    "FROM EstadoMaterial";
+                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows) {
+                    while (reader.HasRows) {
+                        EstadoMaterialDTO em = new EstadoMaterialDTO(
+                            Convert.ToInt32(reader["EstadoMaterialId"].ToString()),
+                            reader["EstadoMaterial"].ToString()
+                        );
+                        estados.Add(em);
+                    }
+                    return estados;
+                } else {
+                    return null;
+                }
+            } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
+                return null;
+            } finally {
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
+            }
         }
     }
 }

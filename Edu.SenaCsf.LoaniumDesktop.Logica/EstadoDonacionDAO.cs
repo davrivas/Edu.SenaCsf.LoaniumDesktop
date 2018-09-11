@@ -23,7 +23,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
 
                 if (reader.HasRows) {
                     EstadoDonacionDTO ed = new EstadoDonacionDTO(
-                        Convert.ToInt32(reader["EstadoDonacionId"]),
+                        Convert.ToInt32(reader["EstadoDonacionId"].ToString()),
                         reader["EstadoDonacion"].ToString()
                     );
                     return ed;
@@ -61,14 +61,18 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                while (reader.HasRows) {
-                    EstadoDonacionDTO ed = new EstadoDonacionDTO (
-                        Convert.ToInt32(reader["EstadoDonacionId"]),
-                        reader["EstadoDonacion"].ToString()
-                    );
-                    estados.Add(ed);
-                }
-                return estados;
+                if (reader.HasRows) {
+                    while (reader.HasRows) {
+                        EstadoDonacionDTO ed = new EstadoDonacionDTO(
+                            Convert.ToInt32(reader["EstadoDonacionId"].ToString()),
+                            reader["EstadoDonacion"].ToString()
+                        );
+                        estados.Add(ed);
+                    }
+                    return estados;
+                } else {
+                    return null;
+                }                
             } catch (SqlException e) {
                 Console.WriteLine(e.StackTrace);
                 return null;

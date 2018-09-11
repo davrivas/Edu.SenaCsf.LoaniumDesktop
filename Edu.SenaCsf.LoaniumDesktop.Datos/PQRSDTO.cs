@@ -17,14 +17,12 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         public PQRSDTO() {
         }
 
-        public PQRSDTO(int id, string remitente, string mensaje, string respuesta, TipoPQRSDTO tipoPQRS, EstadoPQRSDTO estadoPQRS, UsuarioDTO usuario) {
+        public PQRSDTO(int id, string remitente, string mensaje, TipoPQRSDTO tipoPQRS, EstadoPQRSDTO estadoPQRS) {
             this.Id = id;
             this.Remitente = remitente;
             this.Mensaje = mensaje;
-            this.Respuesta = respuesta;
             this.TipoPQRS = tipoPQRS;
             this.EstadoPQRS = estadoPQRS;
-            this.Usuario = usuario;
         }
 
         public int Id { get => id; set => id = value; }

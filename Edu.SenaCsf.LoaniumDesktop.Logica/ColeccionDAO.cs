@@ -23,7 +23,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
 
                 if (reader.HasRows) {
                     ColeccionDTO c = new ColeccionDTO(
-                        Convert.ToInt32(reader["ColeccionId"]),
+                        Convert.ToInt32(reader["ColeccionId"].ToString()),
                         reader["Coleccion"].ToString(),
                         reader["IsbnColeccion"].ToString(),
                         new LibroDTO()

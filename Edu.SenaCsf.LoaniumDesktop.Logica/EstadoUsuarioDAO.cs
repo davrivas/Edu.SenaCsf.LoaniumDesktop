@@ -2,6 +2,7 @@
 using Edu.SenaCsf.LoaniumDesktop.Logica.InterfacesDAO;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,31 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         }
 
         public EstadoUsuarioDTO BuscarPorId(int id) {
-            throw new NotImplementedException();
+            try {
+                Conexion.Abrir();
+                string sql = "SELECT TOP(1) * " +
+                    "FROM EstadoUsuario " +
+                    "WHERE EstadoUsuarioId = " + id;
+                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows) {
+                    EstadoUsuarioDTO eu = new EstadoUsuarioDTO(
+                        Convert.ToInt32(reader["EstadoUsuarioId"].ToString()),
+                        reader["EstadoUsuario"].ToString()
+                    );
+                    return eu;
+                } else {
+                    return null;
+                }
+            } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
+                return null;
+            } finally {
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
+            }
         }
 
         public void Editar(EstadoUsuarioDTO obj) {
@@ -28,7 +53,34 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         }
 
         public List<EstadoUsuarioDTO> MostrarTodos() {
-            throw new NotImplementedException();
+            try {
+                Conexion.Abrir();
+                List<EstadoUsuarioDTO> estados = new List<EstadoUsuarioDTO>();
+                string sql = "SELECT * " +
+                    "FROM EstadoUsuario";
+                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.HasRows) {
+                    while (reader.HasRows) {
+                        EstadoUsuarioDTO eu = new EstadoUsuarioDTO(
+                            Convert.ToInt32(reader["EstadoUsuarioId"].ToString()),
+                            reader["EstadoUsuario"].ToString()
+                        );
+                        estados.Add(eu);
+                    }
+                    return estados;
+                } else {
+                    return null;
+                }                
+            } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
+                return null;
+            } finally {
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
+            }
         }
     }
 }

@@ -18,13 +18,12 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         protected MaterialDTO() {
         }
 
-        protected MaterialDTO(int id, string titulo, string autor, DateTime fechaPublicacion, string descripcion, IdiomaDTO idioma, TipoMaterialDTO tipoMaterial, List<EjemplarMaterialDTO> ejemplares) {
+        protected MaterialDTO(int id, string titulo, string autor, DateTime fechaPublicacion, string descripcion, TipoMaterialDTO tipoMaterial, List<EjemplarMaterialDTO> ejemplares) {
             this.Id = id;
             this.Titulo = titulo;
             this.Autor = autor;
             this.FechaPublicacion = fechaPublicacion;
             this.Descripcion = descripcion;
-            this.Idioma = idioma;
             this.TipoMaterial = tipoMaterial;
             this.Ejemplares = ejemplares;
         }
