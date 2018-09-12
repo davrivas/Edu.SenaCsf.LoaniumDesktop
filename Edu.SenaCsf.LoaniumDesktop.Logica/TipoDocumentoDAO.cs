@@ -22,7 +22,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
+                if (reader.Read()) {
                     TipoDocumentoDTO td = new TipoDocumentoDTO(
                         Convert.ToInt32(reader["TipoDocumentoId"].ToString()),
                         reader["TipoDocumento"].ToString(),
@@ -63,8 +63,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
-                    while (reader.HasRows) {
+                if (reader.Read()) {
+                    while (reader.Read()) {
                         TipoDocumentoDTO td = new TipoDocumentoDTO(
                             Convert.ToInt32(reader["TipoDocumentoId"].ToString()),
                             reader["TipoDocumento"].ToString(),

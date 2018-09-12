@@ -21,7 +21,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
+                if (reader.Read()) {
                     ColeccionDTO c = new ColeccionDTO(
                         Convert.ToInt32(reader["ColeccionId"].ToString()),
                         reader["Coleccion"].ToString(),

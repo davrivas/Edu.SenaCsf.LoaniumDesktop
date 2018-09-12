@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
     public class TipoUsuarioDAO : ITipoUsuarioDAO {
@@ -14,14 +15,14 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
 
         public TipoUsuarioDTO BuscarPorId(int id) {
             try {
-                Conexion.Abrir();
+                //Conexion.Abrir();
                 string sql = "SELECT TOP(1) * " +
                     "FROM TipoUsuario " +
                     "WHERE TipoUsuarioId = " + id;
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
+                if (reader.Read()) {
                     TipoUsuarioDTO tu = new TipoUsuarioDTO(
                         Convert.ToInt32(reader["TipoUsuarioId"].ToString()),
                         reader["TipoUsuario"].ToString()
@@ -61,8 +62,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
-                    while (reader.HasRows) {
+                if (reader.Read()) {
+                    while (reader.Read()) {
                         TipoUsuarioDTO tu = new TipoUsuarioDTO(
                             Convert.ToInt32(reader["TipoUsuarioId"].ToString()),
                             reader["TipoUsuario"].ToString()

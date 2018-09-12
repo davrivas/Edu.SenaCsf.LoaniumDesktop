@@ -21,7 +21,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
+                if (reader.Read()) {
                     IdiomaDTO i = new IdiomaDTO(
                         Convert.ToInt32(reader["IdiomaId"].ToString()),
                         reader["NombreIdioma"].ToString(),
@@ -62,8 +62,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
-                    while (reader.HasRows) {
+                if (reader.Read()) {
+                    while (reader.Read()) {
                         IdiomaDTO i = new IdiomaDTO(
                             Convert.ToInt32(reader["IdiomaId"].ToString()),
                             reader["NombreIdioma"].ToString(),

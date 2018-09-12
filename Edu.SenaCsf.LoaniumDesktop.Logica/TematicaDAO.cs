@@ -21,7 +21,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
+                if (reader.Read()) {
                     TematicaDTO t = new TematicaDTO(
                         Convert.ToInt32(reader["TematicaId"].ToString()),
                         reader["NumeroDewey"].ToString(),
@@ -62,8 +62,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
-                    while (reader.HasRows) {
+                if (reader.Read()) {
+                    while (reader.Read()) {
                         TematicaDTO t = new TematicaDTO(
                             Convert.ToInt32(reader["TematicaId"].ToString()),
                             reader["NumeroDewey"].ToString(),

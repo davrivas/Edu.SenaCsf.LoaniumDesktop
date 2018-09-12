@@ -21,7 +21,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
+                if (reader.Read()) {
                     EstadoPrestamoDTO ep = new EstadoPrestamoDTO(
                         Convert.ToInt32(reader["EstadoPrestamoId"].ToString()),
                         reader["EstadoPrestamo"].ToString()
@@ -61,8 +61,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
-                    while (reader.HasRows) {
+                if (reader.Read()) {
+                    while (reader.Read()) {
                         EstadoPrestamoDTO ep = new EstadoPrestamoDTO(
                             Convert.ToInt32(reader["EstadoPrestamoId"].ToString()),
                             reader["EstadoPrestamo"].ToString()

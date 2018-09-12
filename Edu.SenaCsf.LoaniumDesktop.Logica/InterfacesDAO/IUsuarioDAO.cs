@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica.InterfacesDAO {
     interface IUsuarioDAO : IDAO<UsuarioDTO> {
-        bool /*UsuarioDTO*/ IniciarSesion(int td, string documento, string clave);
+        UsuarioDTO IniciarSesion(TipoDocumentoDTO td, string documento, string clave);
         void CerrarSesion();
         void EditarPerfil(UsuarioDTO u);
         void CambiarClave(UsuarioDTO u, string claveActual, string claveNueva, string confirmacion);

@@ -14,14 +14,14 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
 
         public EstadoUsuarioDTO BuscarPorId(int id) {
             try {
-                Conexion.Abrir();
+                //Conexion.Abrir();
                 string sql = "SELECT TOP(1) * " +
                     "FROM EstadoUsuario " +
                     "WHERE EstadoUsuarioId = " + id;
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
+                if (reader.Read()) {
                     EstadoUsuarioDTO eu = new EstadoUsuarioDTO(
                         Convert.ToInt32(reader["EstadoUsuarioId"].ToString()),
                         reader["EstadoUsuario"].ToString()
@@ -33,11 +33,11 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
             } catch (SqlException e) {
                 Console.WriteLine(e.StackTrace);
                 return null;
-            } finally {
+            } /*finally {
                 if (Conexion.Conn != null) {
                     Conexion.Cerrar();
                 }
-            }
+            }*/
         }
 
         public void Editar(EstadoUsuarioDTO obj) {
@@ -61,8 +61,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 SqlDataReader reader = cmd.ExecuteReader();
 
-                if (reader.HasRows) {
-                    while (reader.HasRows) {
+                if (reader.Read()) {
+                    while (reader.Read()) {
                         EstadoUsuarioDTO eu = new EstadoUsuarioDTO(
                             Convert.ToInt32(reader["EstadoUsuarioId"].ToString()),
                             reader["EstadoUsuario"].ToString()
