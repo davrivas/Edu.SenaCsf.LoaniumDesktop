@@ -29,12 +29,18 @@ namespace Edu.SenaCsf.LoaniumDesktop.Presentacion {
             TipoDocumentoDTO tipoDocumento = tdDAO.BuscarPorId(td);
             string documento = textBoxDocumento.Text;
             string clave = textBoxClave.Text;
-            UsuarioDTO usuario = uDAO.IniciarSesion(tipoDocumento, documento, clave);
+            int usuario = uDAO.IniciarSesion(tipoDocumento, documento, clave);
 
-            if (usuario != null) {
-                MessageBox.Show("Bienvenido " + usuario.Nombres + " " + usuario.Apellidos);
-            } else {
-                MessageBox.Show("ERROR: No se pudo iniciar sesión");
+            switch (usuario) {
+                case 1:
+                    MessageBox.Show("Bienvenido " + Sesion.Usuario.Nombres + " " + Sesion.Usuario.Apellidos);
+                    break;
+                case 2:
+                    MessageBox.Show("ERROR: Usuario suspendido");
+                    break;
+                case 0:
+                    MessageBox.Show("ERROR: No se pudo iniciar sesión");
+                    break;
             }
         }
     }

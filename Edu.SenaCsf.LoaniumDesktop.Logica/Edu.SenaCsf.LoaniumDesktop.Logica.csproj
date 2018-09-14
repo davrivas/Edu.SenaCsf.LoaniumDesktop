@@ -91,6 +91,7 @@
     <Compile Include="TipoPQRSDAO.cs" />
     <Compile Include="TipoUsuarioDAO.cs" />
     <Compile Include="UsuarioDAO.cs" />
+    <Compile Include="Sesion.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Edu.SenaCsf.LoaniumDesktop.Datos\Edu.SenaCsf.LoaniumDesktop.Datos.csproj">

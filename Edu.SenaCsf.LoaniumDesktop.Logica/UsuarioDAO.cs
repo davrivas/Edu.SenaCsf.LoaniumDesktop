@@ -93,7 +93,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         }
 
         public void CerrarSesion() {
-            throw new NotImplementedException();
+            Sesion.Usuario = null;
+            //Redirigir
         }
 
         public void Editar(UsuarioDTO obj) {
@@ -214,7 +215,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
             }
         }
 
-        public UsuarioDTO IniciarSesion(TipoDocumentoDTO td, string documento, string clave) {
+        public int IniciarSesion(TipoDocumentoDTO td, string documento, string clave) {
             try {
                 Conexion.Abrir();
                 TipoUsuarioDAO tuDAO = new TipoUsuarioDAO();
@@ -230,7 +231,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 if (reader.Read()) {
                     int tuId = Convert.ToInt32(reader["TipoUsuarioId"].ToString().Trim());
                     int euId = Convert.ToInt32(reader["EstadoUsuarioId"].ToString().Trim());
-                    return new UsuarioDTO (
+                    UsuarioDTO u = new UsuarioDTO (
                         Convert.ToInt32(reader["UsuarioId"].ToString().Trim()),
                         reader["Nombres"].ToString().Trim(),
                         reader["Apellidos"].ToString().Trim(),
@@ -243,12 +244,22 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                         tuDAO.BuscarPorId(tuId),
                         euDAO.BuscarPorId(euId)
                     );
+
+                    if (u.EstadoUsuario.Id == 1) {
+                        Sesion.Usuario = u;
+                        return 1;
+                    } if (u.EstadoUsuario.Id == 2) {
+                        return 2;
+                    } else { 
+                        ReactivarCuenta(u);
+                        return 3;
+                    }
                 } else {
-                    return null;
+                    return 0;
                 }
             } catch (SqlException e) {
                 Console.WriteLine(e.StackTrace);
-                return null;
+                return 0;
             } finally {
                 if (Conexion.Conn != null) {
                     Conexion.Cerrar();
