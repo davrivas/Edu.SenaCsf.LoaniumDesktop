@@ -54,9 +54,5 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public void Ingresar(ColeccionDTO obj) {
             throw new NotImplementedException();
         }
-
-        public List<ColeccionDTO> MostrarTodos() {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -26,9 +26,5 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public void Ingresar(RevistaDTO obj) {
             throw new NotImplementedException();
         }
-
-        public List<RevistaDTO> MostrarTodos() {
-            throw new NotImplementedException();
-        }
     }
 }

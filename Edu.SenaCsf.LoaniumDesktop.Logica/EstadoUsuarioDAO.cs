@@ -51,36 +51,5 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public void Ingresar(EstadoUsuarioDTO obj) {
             throw new NotImplementedException();
         }
-
-        public List<EstadoUsuarioDTO> MostrarTodos() {
-            try {
-                Conexion.Abrir();
-                List<EstadoUsuarioDTO> estados = new List<EstadoUsuarioDTO>();
-                string sql = "SELECT * " +
-                    "FROM EstadoUsuario";
-                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read()) {
-                    while (reader.Read()) {
-                        EstadoUsuarioDTO eu = new EstadoUsuarioDTO(
-                            Convert.ToInt32(reader["EstadoUsuarioId"].ToString()),
-                            reader["EstadoUsuario"].ToString()
-                        );
-                        estados.Add(eu);
-                    }
-                    return estados;
-                } else {
-                    return null;
-                }                
-            } catch (SqlException e) {
-                Console.WriteLine(e.StackTrace);
-                return null;
-            } finally {
-                if (Conexion.Conn != null) {
-                    Conexion.Cerrar();
-                }
-            }
-        }
     }
 }

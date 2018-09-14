@@ -7,5 +7,6 @@ using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica.InterfacesDAO {
     internal interface IEjemplarMaterialDAO : IDAO<EjemplarMaterialDTO> {
+        List<EjemplarMaterialDTO> BuscarEjemplares(MaterialDTO m);
     }
 }

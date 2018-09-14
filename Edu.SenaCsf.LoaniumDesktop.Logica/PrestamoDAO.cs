@@ -30,9 +30,5 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public List<PrestamoDTO> MostrarPorUsuario(UsuarioDTO u) {
             throw new NotImplementedException();
         }
-
-        public List<PrestamoDTO> MostrarTodos() {
-            throw new NotImplementedException();
-        }
     }
 }

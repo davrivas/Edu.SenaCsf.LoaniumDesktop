@@ -53,37 +53,5 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public void Ingresar(TipoDocumentoDTO obj) {
             throw new NotImplementedException();
         }
-
-        public List<TipoDocumentoDTO> MostrarTodos() {
-            try {
-                Conexion.Abrir();
-                List<TipoDocumentoDTO> tipos = new List<TipoDocumentoDTO>();
-                string sql = "SELECT * " +
-                    "FROM TipoDocumento";
-                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read()) {
-                    while (reader.Read()) {
-                        TipoDocumentoDTO td = new TipoDocumentoDTO(
-                            Convert.ToInt32(reader["TipoDocumentoId"].ToString()),
-                            reader["TipoDocumento"].ToString(),
-                            reader["SiglaTipoDocumento"].ToString()
-                        );
-                        tipos.Add(td);
-                    }
-                    return tipos;
-                } else {
-                    return null;
-                }
-            } catch (SqlException e) {
-                Console.WriteLine(e.StackTrace);
-                return null;
-            } finally {
-                if (Conexion.Conn != null) {
-                    Conexion.Cerrar();
-                }
-            }
-        }
     }
 }

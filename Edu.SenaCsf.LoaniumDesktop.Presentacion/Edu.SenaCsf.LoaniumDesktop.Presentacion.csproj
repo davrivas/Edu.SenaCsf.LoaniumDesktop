@@ -56,6 +56,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LoaniumDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LoaniumDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoaniumDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoaniumDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoaniumDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="LoaniumDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoaniumDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -80,6 +95,39 @@
     </None>
     <None Include="LoaniumDataSet.xss">
       <DependentUpon>LoaniumDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LoaniumDataSet1.xsc">
+      <DependentUpon>LoaniumDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LoaniumDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoaniumDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LoaniumDataSet1.xss">
+      <DependentUpon>LoaniumDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="LoaniumDataSet2.xsc">
+      <DependentUpon>LoaniumDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="LoaniumDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoaniumDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LoaniumDataSet2.xss">
+      <DependentUpon>LoaniumDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="LoaniumDataSet3.xsc">
+      <DependentUpon>LoaniumDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="LoaniumDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoaniumDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LoaniumDataSet3.xss">
+      <DependentUpon>LoaniumDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

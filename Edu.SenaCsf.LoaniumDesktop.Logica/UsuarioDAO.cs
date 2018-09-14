@@ -275,10 +275,6 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
             throw new NotImplementedException();
         }
 
-        public List<UsuarioDTO> MostrarTodos() {
-            throw new NotImplementedException();
-        }
-
         public void ReactivarCuenta(UsuarioDTO u) {
             try {
                 Conexion.Abrir();

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Datos {
-    public abstract class MaterialDTO {
+    public class MaterialDTO {
         private int id;
         private string titulo;
         private string autor;
@@ -15,10 +15,10 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         private TipoMaterialDTO tipoMaterial;
         private List<EjemplarMaterialDTO> ejemplares;
 
-        protected MaterialDTO() {
+        public MaterialDTO() {
         }
 
-        protected MaterialDTO(int id, string titulo, string autor, DateTime fechaPublicacion, string descripcion, IdiomaDTO idioma, TipoMaterialDTO tipoMaterial, List<EjemplarMaterialDTO> ejemplares) {
+        public MaterialDTO(int id, string titulo, string autor, DateTime fechaPublicacion, string descripcion, IdiomaDTO idioma, TipoMaterialDTO tipoMaterial, List<EjemplarMaterialDTO> ejemplares) {
             this.Id = id;
             this.Titulo = titulo;
             this.Autor = autor;

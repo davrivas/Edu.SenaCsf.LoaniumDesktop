@@ -43,10 +43,6 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
             throw new NotImplementedException();
         }
 
-        public List<DonacionDTO> MostrarTodos() {
-            throw new NotImplementedException();
-        }
-
         public void RechazarDonacion(DonacionDTO d) {
             throw new NotImplementedException();
         }

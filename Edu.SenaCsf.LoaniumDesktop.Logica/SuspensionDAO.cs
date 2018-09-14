@@ -26,9 +26,5 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public void Ingresar(SuspensionDTO obj) {
             throw new NotImplementedException();
         }
-
-        public List<SuspensionDTO> MostrarTodos() {
-            throw new NotImplementedException();
-        }
     }
 }

@@ -30,9 +30,5 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public List<LibroDTO> MostrarPorColeccion(ColeccionDTO c) {
             throw new NotImplementedException();
         }
-
-        public List<LibroDTO> MostrarTodos() {
-            throw new NotImplementedException();
-        }
     }
 }

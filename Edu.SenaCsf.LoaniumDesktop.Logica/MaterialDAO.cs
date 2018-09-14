@@ -34,9 +34,5 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public void Ingresar(MaterialDTO obj) {
             throw new NotImplementedException();
         }
-
-        public List<MaterialDTO> MostrarTodos() {
-            throw new NotImplementedException();
-        }
     }
 }

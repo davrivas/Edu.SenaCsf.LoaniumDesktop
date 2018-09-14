@@ -71,9 +71,5 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public void Ingresar(DiscoDTO obj) {
             throw new NotImplementedException();
         }
-
-        public List<DiscoDTO> MostrarTodos() {
-            throw new NotImplementedException();
-        }
     }
 }

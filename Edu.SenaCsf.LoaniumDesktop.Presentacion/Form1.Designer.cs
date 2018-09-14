@@ -46,9 +46,42 @@
             this.loaniumDataSet = new Edu.SenaCsf.LoaniumDesktop.Presentacion.LoaniumDataSet();
             this.tipoDocumentoTableAdapter = new Edu.SenaCsf.LoaniumDesktop.Presentacion.LoaniumDataSetTableAdapters.TipoDocumentoTableAdapter();
             this.buttonIniciar = new System.Windows.Forms.Button();
+            this.textBoxTitulo = new System.Windows.Forms.TextBox();
+            this.textBoxAutor = new System.Windows.Forms.TextBox();
+            this.textBoxDescripcion = new System.Windows.Forms.TextBox();
+            this.dateTimePickerFecha = new System.Windows.Forms.DateTimePicker();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.comboBoxIdioma = new System.Windows.Forms.ComboBox();
+            this.loaniumDataSet1 = new Edu.SenaCsf.LoaniumDesktop.Presentacion.LoaniumDataSet1();
+            this.idiomaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idiomaTableAdapter = new Edu.SenaCsf.LoaniumDesktop.Presentacion.LoaniumDataSet1TableAdapters.IdiomaTableAdapter();
+            this.comboBoxTipoMaterial = new System.Windows.Forms.ComboBox();
+            this.loaniumDataSet2 = new Edu.SenaCsf.LoaniumDesktop.Presentacion.LoaniumDataSet2();
+            this.materialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.materialTableAdapter = new Edu.SenaCsf.LoaniumDesktop.Presentacion.LoaniumDataSet2TableAdapters.MaterialTableAdapter();
+            this.buttonIngresar = new System.Windows.Forms.Button();
+            this.loaniumDataSet3 = new Edu.SenaCsf.LoaniumDesktop.Presentacion.LoaniumDataSet3();
+            this.tipoMaterialBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tipoMaterialTableAdapter = new Edu.SenaCsf.LoaniumDesktop.Presentacion.LoaniumDataSet3TableAdapters.TipoMaterialTableAdapter();
+            this.tipoMaterialIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idiomaIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcionMaterialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaPublicacionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.autorMaterialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tituloMaterialDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.materialIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.textBoxDuracion = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaniumDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaniumDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idiomaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaniumDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaniumDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoMaterialBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -112,19 +145,19 @@
             // cortarToolStripMenuItem
             // 
             this.cortarToolStripMenuItem.Name = "cortarToolStripMenuItem";
-            this.cortarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cortarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.cortarToolStripMenuItem.Text = "Cortar";
             // 
             // copiarToolStripMenuItem
             // 
             this.copiarToolStripMenuItem.Name = "copiarToolStripMenuItem";
-            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.copiarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.copiarToolStripMenuItem.Text = "Copiar";
             // 
             // pegarToolStripMenuItem
             // 
             this.pegarToolStripMenuItem.Name = "pegarToolStripMenuItem";
-            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pegarToolStripMenuItem.Size = new System.Drawing.Size(109, 22);
             this.pegarToolStripMenuItem.Text = "Pegar";
             // 
             // ayudaToolStripMenuItem
@@ -218,11 +251,205 @@
             this.buttonIniciar.UseVisualStyleBackColor = true;
             this.buttonIniciar.Click += new System.EventHandler(this.ButtonIniciar_Click);
             // 
+            // textBoxTitulo
+            // 
+            this.textBoxTitulo.Location = new System.Drawing.Point(462, 28);
+            this.textBoxTitulo.Name = "textBoxTitulo";
+            this.textBoxTitulo.Size = new System.Drawing.Size(100, 20);
+            this.textBoxTitulo.TabIndex = 8;
+            // 
+            // textBoxAutor
+            // 
+            this.textBoxAutor.Location = new System.Drawing.Point(462, 55);
+            this.textBoxAutor.Name = "textBoxAutor";
+            this.textBoxAutor.Size = new System.Drawing.Size(100, 20);
+            this.textBoxAutor.TabIndex = 9;
+            // 
+            // textBoxDescripcion
+            // 
+            this.textBoxDescripcion.Location = new System.Drawing.Point(462, 104);
+            this.textBoxDescripcion.Multiline = true;
+            this.textBoxDescripcion.Name = "textBoxDescripcion";
+            this.textBoxDescripcion.ScrollBars = System.Windows.Forms.ScrollBars.Horizontal;
+            this.textBoxDescripcion.Size = new System.Drawing.Size(200, 90);
+            this.textBoxDescripcion.TabIndex = 10;
+            // 
+            // dateTimePickerFecha
+            // 
+            this.dateTimePickerFecha.Location = new System.Drawing.Point(462, 78);
+            this.dateTimePickerFecha.MaxDate = new System.DateTime(2018, 9, 14, 0, 0, 0, 0);
+            this.dateTimePickerFecha.MinDate = new System.DateTime(1800, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerFecha.Name = "dateTimePickerFecha";
+            this.dateTimePickerFecha.Size = new System.Drawing.Size(200, 20);
+            this.dateTimePickerFecha.TabIndex = 11;
+            this.dateTimePickerFecha.Value = new System.DateTime(2018, 9, 14, 0, 0, 0, 0);
+            // 
+            // comboBoxIdioma
+            // 
+            this.comboBoxIdioma.DataSource = this.idiomaBindingSource;
+            this.comboBoxIdioma.DisplayMember = "NombreIdioma";
+            this.comboBoxIdioma.FormattingEnabled = true;
+            this.comboBoxIdioma.Location = new System.Drawing.Point(462, 201);
+            this.comboBoxIdioma.Name = "comboBoxIdioma";
+            this.comboBoxIdioma.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxIdioma.TabIndex = 12;
+            this.comboBoxIdioma.ValueMember = "IdiomaId";
+            // 
+            // loaniumDataSet1
+            // 
+            this.loaniumDataSet1.DataSetName = "LoaniumDataSet1";
+            this.loaniumDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // idiomaBindingSource
+            // 
+            this.idiomaBindingSource.DataMember = "Idioma";
+            this.idiomaBindingSource.DataSource = this.loaniumDataSet1;
+            // 
+            // idiomaTableAdapter
+            // 
+            this.idiomaTableAdapter.ClearBeforeFill = true;
+            // 
+            // comboBoxTipoMaterial
+            // 
+            this.comboBoxTipoMaterial.DataSource = this.tipoMaterialBindingSource;
+            this.comboBoxTipoMaterial.DisplayMember = "TipoMaterial";
+            this.comboBoxTipoMaterial.FormattingEnabled = true;
+            this.comboBoxTipoMaterial.Location = new System.Drawing.Point(462, 229);
+            this.comboBoxTipoMaterial.Name = "comboBoxTipoMaterial";
+            this.comboBoxTipoMaterial.Size = new System.Drawing.Size(121, 21);
+            this.comboBoxTipoMaterial.TabIndex = 13;
+            this.comboBoxTipoMaterial.ValueMember = "TipoMaterialId";
+            // 
+            // loaniumDataSet2
+            // 
+            this.loaniumDataSet2.DataSetName = "LoaniumDataSet2";
+            this.loaniumDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // materialBindingSource
+            // 
+            this.materialBindingSource.DataMember = "Material";
+            this.materialBindingSource.DataSource = this.loaniumDataSet2;
+            // 
+            // materialTableAdapter
+            // 
+            this.materialTableAdapter.ClearBeforeFill = true;
+            // 
+            // buttonIngresar
+            // 
+            this.buttonIngresar.Location = new System.Drawing.Point(462, 283);
+            this.buttonIngresar.Name = "buttonIngresar";
+            this.buttonIngresar.Size = new System.Drawing.Size(75, 23);
+            this.buttonIngresar.TabIndex = 15;
+            this.buttonIngresar.Text = "Ingresar";
+            this.buttonIngresar.UseVisualStyleBackColor = true;
+            this.buttonIngresar.Click += new System.EventHandler(this.buttonIngresar_Click);
+            // 
+            // loaniumDataSet3
+            // 
+            this.loaniumDataSet3.DataSetName = "LoaniumDataSet3";
+            this.loaniumDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tipoMaterialBindingSource
+            // 
+            this.tipoMaterialBindingSource.DataMember = "TipoMaterial";
+            this.tipoMaterialBindingSource.DataSource = this.loaniumDataSet3;
+            // 
+            // tipoMaterialTableAdapter
+            // 
+            this.tipoMaterialTableAdapter.ClearBeforeFill = true;
+            // 
+            // tipoMaterialIdDataGridViewTextBoxColumn
+            // 
+            this.tipoMaterialIdDataGridViewTextBoxColumn.DataPropertyName = "TipoMaterialId";
+            this.tipoMaterialIdDataGridViewTextBoxColumn.HeaderText = "TipoMaterialId";
+            this.tipoMaterialIdDataGridViewTextBoxColumn.Name = "tipoMaterialIdDataGridViewTextBoxColumn";
+            this.tipoMaterialIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // idiomaIdDataGridViewTextBoxColumn
+            // 
+            this.idiomaIdDataGridViewTextBoxColumn.DataPropertyName = "IdiomaId";
+            this.idiomaIdDataGridViewTextBoxColumn.HeaderText = "IdiomaId";
+            this.idiomaIdDataGridViewTextBoxColumn.Name = "idiomaIdDataGridViewTextBoxColumn";
+            this.idiomaIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descripcionMaterialDataGridViewTextBoxColumn
+            // 
+            this.descripcionMaterialDataGridViewTextBoxColumn.DataPropertyName = "DescripcionMaterial";
+            this.descripcionMaterialDataGridViewTextBoxColumn.HeaderText = "DescripcionMaterial";
+            this.descripcionMaterialDataGridViewTextBoxColumn.Name = "descripcionMaterialDataGridViewTextBoxColumn";
+            this.descripcionMaterialDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // fechaPublicacionDataGridViewTextBoxColumn
+            // 
+            this.fechaPublicacionDataGridViewTextBoxColumn.DataPropertyName = "FechaPublicacion";
+            this.fechaPublicacionDataGridViewTextBoxColumn.HeaderText = "FechaPublicacion";
+            this.fechaPublicacionDataGridViewTextBoxColumn.Name = "fechaPublicacionDataGridViewTextBoxColumn";
+            this.fechaPublicacionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // autorMaterialDataGridViewTextBoxColumn
+            // 
+            this.autorMaterialDataGridViewTextBoxColumn.DataPropertyName = "AutorMaterial";
+            this.autorMaterialDataGridViewTextBoxColumn.HeaderText = "AutorMaterial";
+            this.autorMaterialDataGridViewTextBoxColumn.Name = "autorMaterialDataGridViewTextBoxColumn";
+            this.autorMaterialDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // tituloMaterialDataGridViewTextBoxColumn
+            // 
+            this.tituloMaterialDataGridViewTextBoxColumn.DataPropertyName = "TituloMaterial";
+            this.tituloMaterialDataGridViewTextBoxColumn.HeaderText = "TituloMaterial";
+            this.tituloMaterialDataGridViewTextBoxColumn.Name = "tituloMaterialDataGridViewTextBoxColumn";
+            this.tituloMaterialDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // materialIdDataGridViewTextBoxColumn
+            // 
+            this.materialIdDataGridViewTextBoxColumn.DataPropertyName = "MaterialId";
+            this.materialIdDataGridViewTextBoxColumn.HeaderText = "MaterialId";
+            this.materialIdDataGridViewTextBoxColumn.Name = "materialIdDataGridViewTextBoxColumn";
+            this.materialIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.materialIdDataGridViewTextBoxColumn,
+            this.tituloMaterialDataGridViewTextBoxColumn,
+            this.autorMaterialDataGridViewTextBoxColumn,
+            this.fechaPublicacionDataGridViewTextBoxColumn,
+            this.descripcionMaterialDataGridViewTextBoxColumn,
+            this.idiomaIdDataGridViewTextBoxColumn,
+            this.tipoMaterialIdDataGridViewTextBoxColumn});
+            this.dataGridView1.DataSource = this.materialBindingSource;
+            this.dataGridView1.Location = new System.Drawing.Point(13, 167);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(409, 150);
+            this.dataGridView1.TabIndex = 14;
+            // 
+            // textBoxDuracion
+            // 
+            this.textBoxDuracion.Location = new System.Drawing.Point(462, 257);
+            this.textBoxDuracion.Name = "textBoxDuracion";
+            this.textBoxDuracion.Size = new System.Drawing.Size(100, 20);
+            this.textBoxDuracion.TabIndex = 16;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBoxDuracion);
+            this.Controls.Add(this.buttonIngresar);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.comboBoxTipoMaterial);
+            this.Controls.Add(this.comboBoxIdioma);
+            this.Controls.Add(this.dateTimePickerFecha);
+            this.Controls.Add(this.textBoxDescripcion);
+            this.Controls.Add(this.textBoxAutor);
+            this.Controls.Add(this.textBoxTitulo);
             this.Controls.Add(this.buttonIniciar);
             this.Controls.Add(this.comboBoxTipoDocumento);
             this.Controls.Add(this.textBoxClave);
@@ -239,6 +466,13 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tipoDocumentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.loaniumDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaniumDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.idiomaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaniumDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.materialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.loaniumDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tipoMaterialBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -268,6 +502,32 @@
         private System.Windows.Forms.BindingSource tipoDocumentoBindingSource;
         private LoaniumDataSetTableAdapters.TipoDocumentoTableAdapter tipoDocumentoTableAdapter;
         private System.Windows.Forms.Button buttonIniciar;
+        private System.Windows.Forms.TextBox textBoxTitulo;
+        private System.Windows.Forms.TextBox textBoxAutor;
+        private System.Windows.Forms.TextBox textBoxDescripcion;
+        private System.Windows.Forms.DateTimePicker dateTimePickerFecha;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.ComboBox comboBoxIdioma;
+        private LoaniumDataSet1 loaniumDataSet1;
+        private System.Windows.Forms.BindingSource idiomaBindingSource;
+        private LoaniumDataSet1TableAdapters.IdiomaTableAdapter idiomaTableAdapter;
+        private System.Windows.Forms.ComboBox comboBoxTipoMaterial;
+        private LoaniumDataSet2 loaniumDataSet2;
+        private System.Windows.Forms.BindingSource materialBindingSource;
+        private LoaniumDataSet2TableAdapters.MaterialTableAdapter materialTableAdapter;
+        private System.Windows.Forms.Button buttonIngresar;
+        private LoaniumDataSet3 loaniumDataSet3;
+        private System.Windows.Forms.BindingSource tipoMaterialBindingSource;
+        private LoaniumDataSet3TableAdapters.TipoMaterialTableAdapter tipoMaterialTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tipoMaterialIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idiomaIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionMaterialDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaPublicacionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn autorMaterialDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tituloMaterialDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn materialIdDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox textBoxDuracion;
     }
 }
 

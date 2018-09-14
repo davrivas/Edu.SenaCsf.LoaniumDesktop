@@ -51,36 +51,5 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public void Ingresar(TipoMaterialDTO obj) {
             throw new NotImplementedException();
         }
-
-        public List<TipoMaterialDTO> MostrarTodos() {
-            try {
-                Conexion.Abrir();
-                List<TipoMaterialDTO> tipos = new List<TipoMaterialDTO>();
-                string sql = "SELECT * " +
-                    "FROM TipoMaterial";
-                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read()) {
-                    while (reader.Read()) {
-                        TipoMaterialDTO tm = new TipoMaterialDTO(
-                            Convert.ToInt32(reader["TipoMaterialId"].ToString()),
-                            reader["TipoMaterial"].ToString()
-                        );
-                        tipos.Add(tm);
-                    }
-                    return tipos;
-                } else {
-                    return null;
-                }
-            } catch (SqlException e) {
-                Console.WriteLine(e.StackTrace);
-                return null;
-            } finally {
-                if (Conexion.Conn != null) {
-                    Conexion.Cerrar();
-                }
-            }
-        }
     }
 }
