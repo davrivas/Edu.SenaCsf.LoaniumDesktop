@@ -14,7 +14,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
 
         public EstadoUsuarioDTO BuscarPorId(int id) {
             try {
-                //Conexion.Abrir();
+                Conexion.Abrir();
                 string sql = "SELECT TOP(1) * " +
                     "FROM EstadoUsuario " +
                     "WHERE EstadoUsuarioId = " + id;
@@ -23,8 +23,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
 
                 if (reader.Read()) {
                     EstadoUsuarioDTO eu = new EstadoUsuarioDTO(
-                        Convert.ToInt32(reader["EstadoUsuarioId"].ToString()),
-                        reader["EstadoUsuario"].ToString()
+                        Convert.ToInt32(reader["EstadoUsuarioId"].ToString().Trim()),
+                        reader["EstadoUsuario"].ToString().Trim()
                     );
                     return eu;
                 } else {
@@ -33,11 +33,9 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
             } catch (SqlException e) {
                 Console.WriteLine(e.StackTrace);
                 return null;
-            } /*finally {
-                if (Conexion.Conn != null) {
-                    Conexion.Cerrar();
-                }
-            }*/
+            } finally {
+                Conexion.Cerrar();
+            }
         }
 
         public void Editar(EstadoUsuarioDTO obj) {

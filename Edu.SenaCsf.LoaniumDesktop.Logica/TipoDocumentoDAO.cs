@@ -24,9 +24,9 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
 
                 if (reader.Read()) {
                     TipoDocumentoDTO td = new TipoDocumentoDTO(
-                        Convert.ToInt32(reader["TipoDocumentoId"].ToString()),
-                        reader["TipoDocumento"].ToString(),
-                        reader["SiglaTipoDocumento"].ToString()
+                        Convert.ToInt32(reader["TipoDocumentoId"].ToString().Trim()),
+                        reader["TipoDocumento"].ToString().Trim(),
+                        reader["SiglaTipoDocumento"].ToString().Trim()
                     );
                     return td;
                 } else {
@@ -36,9 +36,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 Console.WriteLine(e.StackTrace);
                 return null;
             } finally {
-                if (Conexion.Conn != null) {
-                    Conexion.Cerrar();
-                }
+                Conexion.Cerrar();
             }
         }
 

@@ -73,6 +73,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public UsuarioDTO IniciarSesion(TipoDocumentoDTO td, string documento, string clave) {
             try {
                 Conexion.Abrir();
+                TipoUsuarioDAO tuDAO = new TipoUsuarioDAO();
+                EstadoUsuarioDAO euDAO = new EstadoUsuarioDAO();
                 string sql = "SELECT TOP (1) * " +
                     "FROM Usuario " +
                     "WHERE TipoDocumentoId = " + td.Id +" " +
@@ -82,18 +84,21 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read()) {
-                    UsuarioDTO u = new UsuarioDTO();
-                    u.Id = Convert.ToInt32(reader["UsuarioId"].ToString());
-                    u.Nombres = reader["Nombres"].ToString();
-                    u.Apellidos = reader["Apellidos"].ToString();
-                    u.Documento = reader["Documento"].ToString();
-                    u.FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"].ToString());
-                    u.CorreoElectronico = reader["CorreoElectronico"].ToString();
-                    u.Clave = reader["Clave"].ToString();
-                    u.Telefono = reader["Telefono"].ToString();
-                    u.TipoDocumento = new TipoDocumentoDAO().BuscarPorId(Convert.ToInt32(reader["TipoDocumentoId"].ToString()));
-                    u.TipoUsuario = new TipoUsuarioDAO().BuscarPorId(Convert.ToInt32(reader["TipoUsuarioId"].ToString()));
-                    u.EstadoUsuario = new EstadoUsuarioDAO().BuscarPorId(Convert.ToInt32(reader["EstadoUsuarioId"].ToString()));
+                    int tuId = Convert.ToInt32(reader["TipoUsuarioId"].ToString());
+                    int euId = Convert.ToInt32(reader["EstadoUsuarioId"].ToString());
+                    UsuarioDTO u = new UsuarioDTO {
+                        Id = Convert.ToInt32(reader["UsuarioId"].ToString().Trim()),
+                        Nombres = reader["Nombres"].ToString().Trim(),
+                        Apellidos = reader["Apellidos"].ToString().Trim(),
+                        Documento = reader["Documento"].ToString().Trim(),
+                        FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"].ToString().Trim()),
+                        CorreoElectronico = reader["CorreoElectronico"].ToString().Trim(),
+                        Clave = reader["Clave"].ToString().Trim(),
+                        Telefono = reader["Telefono"].ToString().Trim(),
+                        TipoDocumento = td,
+                        TipoUsuario = tuDAO.BuscarPorId(tuId),
+                        EstadoUsuario = euDAO.BuscarPorId(euId)
+                    };
                     return u;
                 } else {
                     return null;

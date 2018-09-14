@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
 
         public static void Abrir() {
             try {
+                Cerrar();
                 Conn.Open();
             } catch (SqlException e) {
                 Console.WriteLine(e.StackTrace);

@@ -15,7 +15,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
 
         public TipoUsuarioDTO BuscarPorId(int id) {
             try {
-                //Conexion.Abrir();
+                Conexion.Abrir();
                 string sql = "SELECT TOP(1) * " +
                     "FROM TipoUsuario " +
                     "WHERE TipoUsuarioId = " + id;
@@ -24,8 +24,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
 
                 if (reader.Read()) {
                     TipoUsuarioDTO tu = new TipoUsuarioDTO(
-                        Convert.ToInt32(reader["TipoUsuarioId"].ToString()),
-                        reader["TipoUsuario"].ToString()
+                        Convert.ToInt32(reader["TipoUsuarioId"].ToString().Trim()),
+                        reader["TipoUsuario"].ToString().Trim()
                     );
                     return tu;
                 } else {
@@ -35,9 +35,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 Console.WriteLine(e.StackTrace);
                 return null;
             } finally {
-                if (Conexion.Conn != null) {
-                    Conexion.Cerrar();
-                }
+                Conexion.Cerrar();
             }
         }
 
