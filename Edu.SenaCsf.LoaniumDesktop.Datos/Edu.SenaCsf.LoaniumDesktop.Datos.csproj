@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ColeccionDTO.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="DiscoDTO.cs" />
     <Compile Include="DonacionDTO.cs" />
