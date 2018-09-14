@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
     public class DiscoDAO : IDiscoDAO {
@@ -69,7 +70,32 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         }
 
         public void Ingresar(DiscoDTO obj) {
-            throw new NotImplementedException();
+            try {
+                Conexion.Abrir();
+                string sql = "INSERT INTO Material VALUES " +
+                    "('" + obj.Titulo.Trim() + "', " +
+                    "'" + obj.Autor.Trim() + "', " +
+                    "'" + obj.FechaPublicacion.ToShortDateString().Trim() +"', " +
+                    "'" + obj.Descripcion + "', " +
+                    obj.Idioma.Id + ", " +
+                    "3)";
+                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
+                int cant = cmd.ExecuteNonQuery();
+
+                if (cant == 1) {
+                    Conexion.Abrir();
+                    sql = "INSERT INTO Disco VALUES " +
+                        "('" + obj.TipoMaterial.Sigla + "')";// Generar número aleatorio
+                } else {
+                    MessageBox.Show("No es posible insertar material");
+                }
+            } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
+            } finally {
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
+            }
         }
     }
 }

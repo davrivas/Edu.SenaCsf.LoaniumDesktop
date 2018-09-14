@@ -60,20 +60,20 @@ namespace Edu.SenaCsf.LoaniumDesktop.Presentacion {
         }
 
         private void buttonIngresar_Click(object sender, EventArgs e) {
-            MaterialDAO mDAO = new MaterialDAO();
+            DiscoDAO mDAO = new DiscoDAO();
             IdiomaDAO iDAO = new IdiomaDAO();
             TipoMaterialDAO tmDAO = new TipoMaterialDAO();
             int iId = Convert.ToInt32(comboBoxIdioma.SelectedValue),
                 tmId = Convert.ToInt32(comboBoxTipoMaterial.SelectedValue);
-            // Puede ser material o [libro|revista|disco]
-            MaterialDTO material = new MaterialDTO {
+            DiscoDTO material = new DiscoDTO {
                 Titulo = textBoxTitulo.Text.Trim(),
                 Autor = textBoxAutor.Text.Trim(),
                 FechaPublicacion = dateTimePickerFecha.Value,
                 Descripcion = textBoxDescripcion.Text.Trim(),
                 Idioma = iDAO.BuscarPorId(iId),
                 TipoMaterial = tmDAO.BuscarPorId(tmId),
-                Ejemplares = new List<EjemplarMaterialDTO>()
+                Ejemplares = new List<EjemplarMaterialDTO>(),
+                Duracion = textBoxDuracion.Text.Trim()
             };
             
         }
