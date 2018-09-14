@@ -36,7 +36,9 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 Console.WriteLine(e.StackTrace);
                 return null;
             } finally {
-                Conexion.Cerrar();
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
             }
         }
 

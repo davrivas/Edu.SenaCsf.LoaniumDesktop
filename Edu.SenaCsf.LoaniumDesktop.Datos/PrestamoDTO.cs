@@ -17,13 +17,14 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         public PrestamoDTO() {
         }
 
-        public PrestamoDTO(int id, DateTime fechaPrestamo, DateTime fechaDevolucion, EstadoPrestamoDTO estadoPrestamo, UsuarioDTO usuario, List<EjemplarMaterialDTO> ejemplares) {
+        public PrestamoDTO(int id, DateTime fechaPrestamo, DateTime fechaDevolucion, EstadoPrestamoDTO estadoPrestamo, UsuarioDTO usuario, List<EjemplarMaterialDTO> ejemplares, ObservacionDTO observaciones) {
             this.Id = id;
             this.FechaPrestamo = fechaPrestamo;
             this.FechaDevolucion = fechaDevolucion;
             this.EstadoPrestamo = estadoPrestamo;
             this.Usuario = usuario;
             this.Ejemplares = ejemplares;
+            this.Observaciones = observaciones;
         }
 
         public int Id { get => id; set => id = value; }

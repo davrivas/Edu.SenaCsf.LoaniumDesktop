@@ -16,11 +16,13 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         public DonacionDTO() {
         }
 
-        public DonacionDTO(int id, DateTime fecha, EstadoDonacionDTO estadoDonacion, List<EjemplarMaterialDTO> ejemplares) {
+        public DonacionDTO(int id, DateTime fecha, EstadoDonacionDTO estadoDonacion, List<EjemplarMaterialDTO> ejemplares, MotivoRechazoDTO motivoRechazo, string otroMotivoRechazo) {
             this.Id = id;
             this.Fecha = fecha;
             this.EstadoDonacion = estadoDonacion;
             this.Ejemplares = ejemplares;
+            this.MotivoRechazo = motivoRechazo;
+            this.OtroMotivoRechazo = otroMotivoRechazo;
         }
 
         public int Id { get => id; set => id = value; }

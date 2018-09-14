@@ -13,6 +13,9 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public UsuarioDTO BuscarPorId(int id) {
             try {
                 Conexion.Abrir();
+                TipoDocumentoDAO tdDAO = new TipoDocumentoDAO();
+                TipoUsuarioDAO tuDAO = new TipoUsuarioDAO();
+                EstadoUsuarioDAO euDAO = new EstadoUsuarioDAO();
                 string sql = "SELECT TOP (1) * " +
                     "FROM Usuario " +
                     "WHERE UsuarioId = " + id;
@@ -20,19 +23,22 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read()) {
-                    return new UsuarioDTO {
-                        Id = Convert.ToInt32(reader["UsuarioId"].ToString()),
-                        Nombres = reader["Nombres"].ToString(),
-                        Apellidos = reader["Apellidos"].ToString(),
-                        Documento = reader["Documento"].ToString(),
-                        FechaNacimiento = Convert.ToDateTime(reader["FechaNacimiento"].ToString()),
-                        CorreoElectronico = reader["CorreoElectronico"].ToString(),
-                        Clave = reader["Clave"].ToString(),
-                        Telefono = (reader["Telefono"] == null) ? null : reader["Telefono"].ToString(),
-                        TipoDocumento = new TipoDocumentoDAO().BuscarPorId(Convert.ToInt32(reader["TipoDocumentoId"].ToString())),
-                        TipoUsuario = new TipoUsuarioDAO().BuscarPorId(Convert.ToInt32(reader["TipoUsuarioId"].ToString())),
-                        EstadoUsuario = new EstadoUsuarioDAO().BuscarPorId(Convert.ToInt32(reader["EstadoUsuarioId"].ToString()))
-                    };
+                    int tdId = Convert.ToInt32(reader["TipoDocumentoId"].ToString().Trim()),
+                        tuId = Convert.ToInt32(reader["TipoUsuarioId"].ToString().Trim()),
+                        euId = Convert.ToInt32(reader["EstadoUsuarioId"].ToString().Trim());
+                    return new UsuarioDTO ( 
+                        Convert.ToInt32(reader["UsuarioId"].ToString()),
+                        reader["Nombres"].ToString().Trim(),
+                        reader["Apellidos"].ToString().Trim(),
+                        reader["Documento"].ToString().Trim(),
+                        Convert.ToDateTime(reader["FechaNacimiento"].ToString().Trim()),
+                        reader["CorreoElectronico"].ToString().Trim(),
+                        reader["Clave"].ToString().Trim(),
+                        reader["Telefono"].ToString().Trim(),
+                        tdDAO.BuscarPorId(tdId),
+                        tuDAO.BuscarPorId(tuId),
+                        euDAO.BuscarPorId(euId)
+                    );
                 } else {
                     return null;
                 }
@@ -84,8 +90,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read()) {
-                    int tuId = Convert.ToInt32(reader["TipoUsuarioId"].ToString());
-                    int euId = Convert.ToInt32(reader["EstadoUsuarioId"].ToString());
+                    int tuId = Convert.ToInt32(reader["TipoUsuarioId"].ToString().Trim());
+                    int euId = Convert.ToInt32(reader["EstadoUsuarioId"].ToString().Trim());
                     UsuarioDTO u = new UsuarioDTO {
                         Id = Convert.ToInt32(reader["UsuarioId"].ToString().Trim()),
                         Nombres = reader["Nombres"].ToString().Trim(),
@@ -107,7 +113,9 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 Console.WriteLine(e.StackTrace);
                 return null;
             } finally {
-                Conexion.Cerrar();
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
             }       
         }
 
