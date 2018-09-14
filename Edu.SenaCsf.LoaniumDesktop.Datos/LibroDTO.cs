@@ -13,7 +13,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         public LibroDTO() : base() {
         }
 
-        public LibroDTO(int id, string titulo, string autor, DateTime fechaPublicacion, string descripcion, IdiomaDTO idioma, TipoMaterialDTO tipoMaterial, List<EjemplarMaterialDTO> ejemplares, string isbn, string editorial, TematicaDTO tematica) : base(id, titulo, autor, fechaPublicacion, descripcion, idioma, tipoMaterial, ejemplares) {
+        public LibroDTO(int id, string titulo, string autor, DateTime fechaPublicacion, string descripcion, IdiomaDTO idioma, TipoMaterialDTO tipoMaterial, EstadoMaterialDTO estadoMaterial, string isbn, string editorial, TematicaDTO tematica) : base(id, titulo, autor, fechaPublicacion, descripcion, idioma, tipoMaterial, estadoMaterial) {
             this.Id = id;
             this.Titulo = titulo;
             this.Autor = autor;
@@ -21,7 +21,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
             this.Descripcion = descripcion;
             this.Idioma = idioma;
             this.TipoMaterial = tipoMaterial;
-            this.Ejemplares = ejemplares;
+            this.EstadoMaterial = estadoMaterial;
             this.Isbn = isbn;
             this.Editorial = editorial;
             this.Tematica = tematica;

@@ -9,18 +9,18 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         private int id;
         private DateTime fecha;
         private EstadoDonacionDTO estadoDonacion;
-        private List<EjemplarMaterialDTO> ejemplares;
+        private List<MaterialDTO> materiales;
         private MotivoRechazoDTO motivoRechazo;
         private string otroMotivoRechazo;
 
         public DonacionDTO() {
         }
 
-        public DonacionDTO(int id, DateTime fecha, EstadoDonacionDTO estadoDonacion, List<EjemplarMaterialDTO> ejemplares, MotivoRechazoDTO motivoRechazo, string otroMotivoRechazo) {
+        public DonacionDTO(int id, DateTime fecha, EstadoDonacionDTO estadoDonacion, List<MaterialDTO> materiales, MotivoRechazoDTO motivoRechazo, string otroMotivoRechazo) {
             this.Id = id;
             this.Fecha = fecha;
             this.EstadoDonacion = estadoDonacion;
-            this.Ejemplares = ejemplares;
+            this.Materiales = materiales;
             this.MotivoRechazo = motivoRechazo;
             this.OtroMotivoRechazo = otroMotivoRechazo;
         }
@@ -28,7 +28,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         public int Id { get => id; set => id = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
         public EstadoDonacionDTO EstadoDonacion { get => estadoDonacion; set => estadoDonacion = value; }
-        public List<EjemplarMaterialDTO> Ejemplares { get => ejemplares; set => ejemplares = new List<EjemplarMaterialDTO>(); }
+        public List<MaterialDTO> Materiales { get => materiales; set => materiales = new List<MaterialDTO>(); }
         public MotivoRechazoDTO MotivoRechazo { get => motivoRechazo; set => motivoRechazo = value; }
         public string OtroMotivoRechazo { get => otroMotivoRechazo; set => otroMotivoRechazo = value; }
     }

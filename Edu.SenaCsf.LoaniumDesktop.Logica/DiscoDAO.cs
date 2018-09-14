@@ -19,6 +19,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 DiscoDTO disco = new DiscoDTO();
                 TipoMaterialDAO tmDAO = new TipoMaterialDAO();
                 IdiomaDAO iDAO = new IdiomaDAO();
+                EstadoMaterialDAO emDAO = new EstadoMaterialDAO();
                 string sql = "SELECT * " +
                     "FROM Material " +
                     "WHERE MaterialId = " + id;
@@ -27,7 +28,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
 
                 if (reader.Read()) {
                     int iId = Convert.ToInt32(reader["IdiomaId"].ToString().Trim()),
-                        tmId = Convert.ToInt32(reader["TipoMaterialId"].ToString().Trim());
+                        tmId = Convert.ToInt32(reader["TipoMaterialId"].ToString().Trim()),
+                        emId = Convert.ToInt32(reader["EstadoMaterialId"].ToString().Trim());
                     disco.Id = Convert.ToInt32(reader["MaterialId"].ToString().Trim());
                     disco.Titulo = reader["TituloMaterial"].ToString().Trim();
                     disco.Autor = reader["AutorMaterial"].ToString().Trim();
@@ -35,6 +37,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                     disco.Descripcion = reader["DescripcionMaterial"].ToString().Trim();
                     disco.Idioma = iDAO.BuscarPorId(iId);
                     disco.TipoMaterial = tmDAO.BuscarPorId(tmId);
+                    disco.EstadoMaterial = emDAO.BuscarPorId(emId);
 
                     Conexion.Abrir();
                     sql = "SELECT * " +
@@ -46,9 +49,11 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                         disco.Duracion = reader["DuracionDisco"].ToString().Trim();
                         return disco;
                     } else {
+                        MessageBox.Show("No se encontró disco");
                         return null;
                     }
                 } else {
+                    MessageBox.Show("No se encontró disco");
                     return null;
                 }
             } catch (SqlException e) {
@@ -84,6 +89,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
 
                 if (cant == 1) {
                     Conexion.Abrir();
+                    int random = new Random().Next(9999);
                     sql = "INSERT INTO Disco VALUES " +
                         "('" + obj.TipoMaterial.Sigla + "')";// Generar número aleatorio
                 } else {

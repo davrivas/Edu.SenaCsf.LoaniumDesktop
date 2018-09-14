@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="DiscoDAO.cs" />
     <Compile Include="DonacionDAO.cs" />
-    <Compile Include="EjemplarMaterialDAO.cs" />
     <Compile Include="EstadoDonacionDAO.cs" />
     <Compile Include="EstadoMaterialDAO.cs" />
     <Compile Include="EstadoPQRSDAO.cs" />
@@ -59,11 +58,9 @@
     <Compile Include="InterfacesDAO\ITipoPQRSDAO.cs" />
     <Compile Include="InterfacesDAO\ITipoUsuarioDAO.cs" />
     <Compile Include="InterfacesDAO\IUsuarioDAO.cs" />
-    <Compile Include="InterfacesDAO\IColeccionDAO.cs" />
     <Compile Include="InterfacesDAO\IDAO.cs" />
     <Compile Include="InterfacesDAO\IDiscoDAO.cs" />
     <Compile Include="InterfacesDAO\IDonacionDAO.cs" />
-    <Compile Include="InterfacesDAO\IEjemplarMaterialDAO.cs" />
     <Compile Include="InterfacesDAO\IIdiomaDAO.cs" />
     <Compile Include="InterfacesDAO\ILibroDAO.cs" />
     <Compile Include="InterfacesDAO\IMaterialDAO.cs" />

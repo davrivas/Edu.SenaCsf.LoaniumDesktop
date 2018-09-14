@@ -13,12 +13,12 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         private string descripcion;
         private IdiomaDTO idioma;
         private TipoMaterialDTO tipoMaterial;
-        private List<EjemplarMaterialDTO> ejemplares;
+        private EstadoMaterialDTO estadoMaterial;
 
         public MaterialDTO() {
         }
 
-        public MaterialDTO(int id, string titulo, string autor, DateTime fechaPublicacion, string descripcion, IdiomaDTO idioma, TipoMaterialDTO tipoMaterial, List<EjemplarMaterialDTO> ejemplares) {
+        public MaterialDTO(int id, string titulo, string autor, DateTime fechaPublicacion, string descripcion, IdiomaDTO idioma, TipoMaterialDTO tipoMaterial, EstadoMaterialDTO estadoMaterial) {
             this.Id = id;
             this.Titulo = titulo;
             this.Autor = autor;
@@ -26,7 +26,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
             this.Descripcion = descripcion;
             this.Idioma = idioma;
             this.TipoMaterial = tipoMaterial;
-            this.Ejemplares = ejemplares;
+            this.EstadoMaterial = estadoMaterial;
         }
 
         public int Id { get => id; set => id = value; }
@@ -36,6 +36,6 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public IdiomaDTO Idioma { get => idioma; set => idioma = value; }
         public TipoMaterialDTO TipoMaterial { get => tipoMaterial; set => tipoMaterial = value; }
-        public List<EjemplarMaterialDTO> Ejemplares { get => ejemplares; set => ejemplares = new List<EjemplarMaterialDTO>(); }
+        public EstadoMaterialDTO EstadoMaterial { get => estadoMaterial; set => estadoMaterial = value; }
     }
 }

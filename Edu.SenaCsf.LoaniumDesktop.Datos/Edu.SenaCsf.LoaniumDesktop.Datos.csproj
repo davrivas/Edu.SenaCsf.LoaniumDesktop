@@ -44,7 +44,6 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="DiscoDTO.cs" />
     <Compile Include="DonacionDTO.cs" />
-    <Compile Include="EjemplarMaterialDTO.cs" />
     <Compile Include="EstadoDonacionDTO.cs" />
     <Compile Include="EstadoMaterialDTO.cs" />
     <Compile Include="EstadoPQRSDTO.cs" />
