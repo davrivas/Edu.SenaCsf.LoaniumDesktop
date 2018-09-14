@@ -15,6 +15,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         public ColeccionDTO BuscarPorId(int id) {
             try {
                 Conexion.Abrir();
+                LibroDAO lDAO = new LibroDAO();
                 string sql = "SELECT TOP(1) * " +
                     "FROM Coleccion " +
                     "WHERE ColeccionId = " + id;
@@ -22,13 +23,13 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read()) {
-                    ColeccionDTO c = new ColeccionDTO(
-                        Convert.ToInt32(reader["ColeccionId"].ToString()),
-                        reader["Coleccion"].ToString(),
-                        reader["IsbnColeccion"].ToString(),
-                        new LibroDTO()
+                    int lId = Convert.ToInt32(reader["LibroId"].ToString().Trim());
+                    return new ColeccionDTO(
+                        Convert.ToInt32(reader["ColeccionId"].ToString().Trim()),
+                        reader["Coleccion"].ToString().Trim(),
+                        reader["IsbnColeccion"].ToString().Trim(),
+                        lDAO.BuscarPorId(lId)
                     );
-                    return c;
                 } else {
                     return null;
                 }
