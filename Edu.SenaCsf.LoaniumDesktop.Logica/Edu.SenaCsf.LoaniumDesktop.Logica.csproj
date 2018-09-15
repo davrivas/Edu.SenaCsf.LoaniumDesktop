@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DiscoDAO.cs" />
     <Compile Include="DonacionDAO.cs" />
     <Compile Include="EstadoDonacionDAO.cs" />
     <Compile Include="EstadoMaterialDAO.cs" />
@@ -72,14 +71,10 @@
     <Compile Include="InterfacesDAO\ISuspensionDAO.cs" />
     <Compile Include="InterfacesDAO\ITematicaDAO.cs" />
     <Compile Include="InterfacesDAO\ITipoDocumentoDAO.cs" />
-    <Compile Include="LibroDAO.cs" />
     <Compile Include="MaterialDAO.cs" />
-    <Compile Include="MotivoRechazoDAO.cs" />
-    <Compile Include="ObservacionDAO.cs" />
     <Compile Include="PQRSDAO.cs" />
     <Compile Include="PrestamoDAO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RevistaDAO.cs" />
     <Compile Include="SuspensionDAO.cs" />
     <Compile Include="TematicaDAO.cs" />
     <Compile Include="TipoDocumentoDAO.cs" />

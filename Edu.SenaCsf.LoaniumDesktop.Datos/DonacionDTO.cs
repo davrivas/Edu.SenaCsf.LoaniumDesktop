@@ -8,28 +8,28 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
     public class DonacionDTO {
         private int id;
         private DateTime fecha;
+        private string motivoRechazo;
         private EstadoDonacionDTO estadoDonacion;
+        private UsuarioDTO usuario;
         private List<MaterialDTO> materiales;
-        private MotivoRechazoDTO motivoRechazo;
-        private string otroMotivoRechazo;
-
+        
         public DonacionDTO() {
         }
 
-        public DonacionDTO(int id, DateTime fecha, EstadoDonacionDTO estadoDonacion, List<MaterialDTO> materiales, MotivoRechazoDTO motivoRechazo, string otroMotivoRechazo) {
+        public DonacionDTO(int id, DateTime fecha, string motivoRechazo, EstadoDonacionDTO estadoDonacion, UsuarioDTO usuario, List<MaterialDTO> materiales) {
             this.Id = id;
             this.Fecha = fecha;
-            this.EstadoDonacion = estadoDonacion;
-            this.Materiales = materiales;
             this.MotivoRechazo = motivoRechazo;
-            this.OtroMotivoRechazo = otroMotivoRechazo;
+            this.EstadoDonacion = estadoDonacion;
+            this.Usuario = usuario;
+            this.Materiales = materiales;
         }
 
         public int Id { get => id; set => id = value; }
         public DateTime Fecha { get => fecha; set => fecha = value; }
+        public string MotivoRechazo { get => motivoRechazo; set => motivoRechazo = value; }
         public EstadoDonacionDTO EstadoDonacion { get => estadoDonacion; set => estadoDonacion = value; }
+        public UsuarioDTO Usuario { get => usuario; set => usuario = value; }
         public List<MaterialDTO> Materiales { get => materiales; set => materiales = new List<MaterialDTO>(); }
-        public MotivoRechazoDTO MotivoRechazo { get => motivoRechazo; set => motivoRechazo = value; }
-        public string OtroMotivoRechazo { get => otroMotivoRechazo; set => otroMotivoRechazo = value; }
     }
 }
