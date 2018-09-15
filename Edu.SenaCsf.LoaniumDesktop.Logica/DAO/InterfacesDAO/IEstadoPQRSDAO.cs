@@ -1,11 +1,11 @@
-﻿using Edu.SenaCsf.LoaniumDesktop.Datos;
+﻿using Edu.SenaCsf.LoaniumDesktop.Datos.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edu.SenaCsf.LoaniumDesktop.Logica.InterfacesDAO {
-    internal interface IEstadoPQRSDAO : IDAO<EstadoPQRSDTO> {
+namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO {
+    public interface IEstadoPQRSDAO : IDAO<EstadoPQRSDTO> {
     }
 }

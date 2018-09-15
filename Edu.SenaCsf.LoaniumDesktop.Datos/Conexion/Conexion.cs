@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Edu.SenaCsf.LoaniumDesktop.Datos {
+namespace Edu.SenaCsf.LoaniumDesktop.Datos.Conexion {
     public class Conexion {
         private static string cadenaConexion = "Data Source=DESKTOP-0S26F42\\SQLEXPRESS;Initial Catalog=Loanium;Integrated Security=True";
         private static SqlConnection conn = new SqlConnection(cadenaConexion);

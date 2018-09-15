@@ -1,5 +1,6 @@
-﻿using Edu.SenaCsf.LoaniumDesktop.Datos;
-using Edu.SenaCsf.LoaniumDesktop.Logica.InterfacesDAO;
+﻿using Edu.SenaCsf.LoaniumDesktop.Datos.Conexion;
+using Edu.SenaCsf.LoaniumDesktop.Datos.DTO;
+using Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edu.SenaCsf.LoaniumDesktop.Logica {
+namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
     public class EstadoUsuarioDAO : IEstadoUsuarioDAO {
         public EstadoUsuarioDAO() {
         }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edu.SenaCsf.LoaniumDesktop.Datos {
+namespace Edu.SenaCsf.LoaniumDesktop.Datos.DTO {
     public class SuspensionDTO {
         private int id;
         private DateTime fecha;

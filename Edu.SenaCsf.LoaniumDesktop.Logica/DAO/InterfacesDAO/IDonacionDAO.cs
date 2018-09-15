@@ -1,4 +1,4 @@
-﻿using Edu.SenaCsf.LoaniumDesktop.Datos;
+﻿using Edu.SenaCsf.LoaniumDesktop.Datos.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO {
-    internal interface IDonacionDAO : IDAO<DonacionDTO> {
+    public interface IDonacionDAO : IDAO<DonacionDTO> {
         void AprobarDonacion(DonacionDTO d);
         void RechazarDonacion(DonacionDTO d);
         List<DonacionDTO> MostrarPorUsuario(UsuarioDTO u);

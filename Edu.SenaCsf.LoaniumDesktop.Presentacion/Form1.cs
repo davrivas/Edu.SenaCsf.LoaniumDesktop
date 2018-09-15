@@ -1,4 +1,4 @@
-﻿using Edu.SenaCsf.LoaniumDesktop.Logica;
+﻿using Edu.SenaCsf.LoaniumDesktop.Logica.Controlador;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -1,12 +1,12 @@
-﻿using Edu.SenaCsf.LoaniumDesktop.Datos;
+﻿using Edu.SenaCsf.LoaniumDesktop.Datos.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edu.SenaCsf.LoaniumDesktop.Logica.InterfacesDAO {
-    interface IUsuarioDAO : IDAO<UsuarioDTO> {
+namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO {
+    public interface IUsuarioDAO : IDAO<UsuarioDTO> {
         void Registrarse(UsuarioDTO u);
         int IniciarSesion(TipoDocumentoDTO td, string documento, string clave);
         void CerrarSesion();

@@ -1,4 +1,4 @@
-﻿using Edu.SenaCsf.LoaniumDesktop.Datos;
+﻿using Edu.SenaCsf.LoaniumDesktop.Datos.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,6 +6,6 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO {
-    internal interface IEstadoMaterialDAO : IDAO<EstadoMaterialDTO> {
+    public interface IEstadoMaterialDAO : IDAO<EstadoMaterialDTO> {
     }
 }

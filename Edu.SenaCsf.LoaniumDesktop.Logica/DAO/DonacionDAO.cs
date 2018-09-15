@@ -1,4 +1,5 @@
-﻿using Edu.SenaCsf.LoaniumDesktop.Datos;
+﻿using Edu.SenaCsf.LoaniumDesktop.Datos.DTO;
+using Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
