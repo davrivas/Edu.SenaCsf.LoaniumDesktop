@@ -6,9 +6,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica {
-    public class Sesion {
+    public class SesionControlador {
         private static UsuarioDTO usuario;
 
         public static UsuarioDTO Usuario { get => usuario; set => usuario = value; }
+
+        public static void Iniciar() {
+            Conexion.Abrir();
+        }
     }
 }

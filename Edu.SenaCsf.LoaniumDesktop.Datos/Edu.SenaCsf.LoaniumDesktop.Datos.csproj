@@ -41,25 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conexion.cs" />
-    <Compile Include="DonacionDTO.cs" />
-    <Compile Include="EstadoDonacionDTO.cs" />
-    <Compile Include="EstadoMaterialDTO.cs" />
-    <Compile Include="EstadoPQRSDTO.cs" />
-    <Compile Include="EstadoPrestamoDTO.cs" />
-    <Compile Include="EstadoUsuarioDTO.cs" />
-    <Compile Include="IdiomaDTO.cs" />
-    <Compile Include="MaterialDTO.cs" />
-    <Compile Include="PQRSDTO.cs" />
-    <Compile Include="PrestamoDTO.cs" />
+    <Compile Include="Conexion\Conexion.cs" />
+    <Compile Include="DTO\DonacionDTO.cs" />
+    <Compile Include="DTO\EstadoDonacionDTO.cs" />
+    <Compile Include="DTO\EstadoMaterialDTO.cs" />
+    <Compile Include="DTO\EstadoPQRSDTO.cs" />
+    <Compile Include="DTO\EstadoPrestamoDTO.cs" />
+    <Compile Include="DTO\EstadoUsuarioDTO.cs" />
+    <Compile Include="DTO\IdiomaDTO.cs" />
+    <Compile Include="DTO\MaterialDTO.cs" />
+    <Compile Include="DTO\PQRSDTO.cs" />
+    <Compile Include="DTO\PrestamoDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SuspensionDTO.cs" />
-    <Compile Include="TematicaDTO.cs" />
-    <Compile Include="TipoDocumentoDTO.cs" />
-    <Compile Include="TipoMaterialDTO.cs" />
-    <Compile Include="TipoPQRSDTO.cs" />
-    <Compile Include="TipoUsuarioDTO.cs" />
-    <Compile Include="UsuarioDTO.cs" />
+    <Compile Include="DTO\SuspensionDTO.cs" />
+    <Compile Include="DTO\TematicaDTO.cs" />
+    <Compile Include="DTO\TipoDocumentoDTO.cs" />
+    <Compile Include="DTO\TipoMaterialDTO.cs" />
+    <Compile Include="DTO\TipoPQRSDTO.cs" />
+    <Compile Include="DTO\TipoUsuarioDTO.cs" />
+    <Compile Include="DTO\UsuarioDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -93,7 +93,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
         }
 
         public void CerrarSesion() {
-            Sesion.Usuario = null;
+            SesionControlador.Usuario = null;
             //Redirigir
         }
 
@@ -246,7 +246,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica {
                     );
 
                     if (u.EstadoUsuario.Id == 1) {
-                        Sesion.Usuario = u;
+                        SesionControlador.Usuario = u;
                         return 1;
                     } if (u.EstadoUsuario.Id == 2) {
                         return 2;

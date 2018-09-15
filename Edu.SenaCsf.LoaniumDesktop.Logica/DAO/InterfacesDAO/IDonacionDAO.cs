@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edu.SenaCsf.LoaniumDesktop.Logica.InterfacesDAO {
+namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO {
     internal interface IDonacionDAO : IDAO<DonacionDTO> {
         void AprobarDonacion(DonacionDTO d);
         void RechazarDonacion(DonacionDTO d);

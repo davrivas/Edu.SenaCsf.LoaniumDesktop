@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edu.SenaCsf.LoaniumDesktop.Logica.InterfacesDAO {
-    internal interface IEstadoDonacionDAO : IDAO<EstadoDonacionDTO> {
+namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO {
+    internal interface IEstadoMaterialDAO : IDAO<EstadoMaterialDTO> {
     }
 }

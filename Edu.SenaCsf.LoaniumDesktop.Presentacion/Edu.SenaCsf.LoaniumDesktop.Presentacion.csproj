@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9063ECB8-9F72-433E-B927-1D448C8BEC89}</ProjectGuid>
+    <ProjectGuid>{7AEA5284-F22D-47F6-956D-C26F99E4D45C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Edu.SenaCsf.LoaniumDesktop.Presentacion</RootNamespace>
     <AssemblyName>Edu.SenaCsf.LoaniumDesktop.Presentacion</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -79,10 +80,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Edu.SenaCsf.LoaniumDesktop.Datos\Edu.SenaCsf.LoaniumDesktop.Datos.csproj">
-      <Project>{60738740-69E8-431F-AFCB-7D061F4189F8}</Project>
-      <Name>Edu.SenaCsf.LoaniumDesktop.Datos</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Edu.SenaCsf.LoaniumDesktop.Logica\Edu.SenaCsf.LoaniumDesktop.Logica.csproj">
       <Project>{EC3A00B1-462C-4494-AB91-BD5644D0F7F5}</Project>
       <Name>Edu.SenaCsf.LoaniumDesktop.Logica</Name>
