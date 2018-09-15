@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edu.SenaCsf.LoaniumDesktop.Logica.Controlador {
+namespace Edu.SenaCsf.LoaniumDesktop.Logica.Sesion {
     public class SesionControlador {
         private static UsuarioDTO usuario;
 

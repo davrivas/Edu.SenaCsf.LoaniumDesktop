@@ -77,7 +77,7 @@
     <Compile Include="DAO\TipoPQRSDAO.cs" />
     <Compile Include="DAO\TipoUsuarioDAO.cs" />
     <Compile Include="DAO\UsuarioDAO.cs" />
-    <Compile Include="Controlador\SesionControlador.cs" />
+    <Compile Include="Sesion\SesionControlador.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Edu.SenaCsf.LoaniumDesktop.Datos\Edu.SenaCsf.LoaniumDesktop.Datos.csproj">

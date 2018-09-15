@@ -1,6 +1,6 @@
 ﻿using Edu.SenaCsf.LoaniumDesktop.Datos.Conexion;
 using Edu.SenaCsf.LoaniumDesktop.Datos.DTO;
-using Edu.SenaCsf.LoaniumDesktop.Logica.Controlador;
+using Edu.SenaCsf.LoaniumDesktop.Logica.Sesion;
 using Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO;
 using System;
 using System.Collections.Generic;
