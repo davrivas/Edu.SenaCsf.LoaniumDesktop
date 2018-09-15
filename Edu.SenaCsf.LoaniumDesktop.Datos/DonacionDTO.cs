@@ -8,7 +8,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
     public class DonacionDTO {
         private int id;
         private DateTime fecha;
-        private string motivoRechazo;
+        private string motivoRechazo; // Opcional
         private EstadoDonacionDTO estadoDonacion;
         private UsuarioDTO usuario;
         private List<MaterialDTO> materiales;

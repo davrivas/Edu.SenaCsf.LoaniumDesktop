@@ -58,16 +58,11 @@
     <Compile Include="InterfacesDAO\ITipoUsuarioDAO.cs" />
     <Compile Include="InterfacesDAO\IUsuarioDAO.cs" />
     <Compile Include="InterfacesDAO\IDAO.cs" />
-    <Compile Include="InterfacesDAO\IDiscoDAO.cs" />
     <Compile Include="InterfacesDAO\IDonacionDAO.cs" />
     <Compile Include="InterfacesDAO\IIdiomaDAO.cs" />
-    <Compile Include="InterfacesDAO\ILibroDAO.cs" />
     <Compile Include="InterfacesDAO\IMaterialDAO.cs" />
-    <Compile Include="InterfacesDAO\IMotivoRechazoDAO.cs" />
-    <Compile Include="InterfacesDAO\IObservacionDAO.cs" />
     <Compile Include="InterfacesDAO\IPQRSDAO.cs" />
     <Compile Include="InterfacesDAO\IPrestamoDAO.cs" />
-    <Compile Include="InterfacesDAO\IRevistaDAO.cs" />
     <Compile Include="InterfacesDAO\ISuspensionDAO.cs" />
     <Compile Include="InterfacesDAO\ITematicaDAO.cs" />
     <Compile Include="InterfacesDAO\ITipoDocumentoDAO.cs" />

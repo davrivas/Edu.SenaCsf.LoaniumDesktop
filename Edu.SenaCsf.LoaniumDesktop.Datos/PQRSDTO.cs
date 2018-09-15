@@ -9,7 +9,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos {
         private int id;
         private string remitente;
         private string mensaje;
-        private string respuesta;
+        private string respuesta; // Cuando se responde PQRS
         private TipoPQRSDTO tipoPQRS;
         private EstadoPQRSDTO estadoPQRS;
         private UsuarioDTO usuario;

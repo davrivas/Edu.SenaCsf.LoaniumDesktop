@@ -60,22 +60,24 @@ namespace Edu.SenaCsf.LoaniumDesktop.Presentacion {
         }
 
         private void buttonIngresar_Click(object sender, EventArgs e) {
-            DiscoDAO mDAO = new DiscoDAO();
+            MaterialDAO mDAO = new MaterialDAO();
             IdiomaDAO iDAO = new IdiomaDAO();
             TipoMaterialDAO tmDAO = new TipoMaterialDAO();
             int iId = Convert.ToInt32(comboBoxIdioma.SelectedValue),
                 tmId = Convert.ToInt32(comboBoxTipoMaterial.SelectedValue);
-            DiscoDTO material = new DiscoDTO {
-                Titulo = textBoxTitulo.Text.Trim(),
-                Autor = textBoxAutor.Text.Trim(),
-                FechaPublicacion = dateTimePickerFecha.Value,
-                Descripcion = textBoxDescripcion.Text.Trim(),
-                Idioma = iDAO.BuscarPorId(iId),
-                TipoMaterial = tmDAO.BuscarPorId(tmId),
-                Ejemplares = new List<EjemplarMaterialDTO>(),
-                Duracion = textBoxDuracion.Text.Trim()
-            };
+            //MaterialDTO material = new MaterialDTO {
+            //    Titulo = textBoxTitulo.Text.Trim(),
+            //    Autor = textBoxAutor.Text.Trim(),
+            //    FechaPublicacion = dateTimePickerFecha.Value,
+            //    Descripcion = textBoxDescripcion.Text.Trim(),
+            //    Idioma = iDAO.BuscarPorId(iId),
+            //    TipoMaterial = tmDAO.BuscarPorId(tmId),
+            //    Ejemplares = new List<EjemplarMaterialDTO>(),
+            //    Duracion = textBoxDuracion.Text.Trim()
+            //};
             
         }
+
+        private void button1_Click(object sender, EventArgs e) => Conexion.Abrir();
     }
 }
