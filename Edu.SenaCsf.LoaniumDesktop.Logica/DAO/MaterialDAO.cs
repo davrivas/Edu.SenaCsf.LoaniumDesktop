@@ -11,11 +11,6 @@ using System.Windows.Forms;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
     public class MaterialDAO : IMaterialDAO {
-        private TipoMaterialDAO tmDAO = new TipoMaterialDAO();
-        private IdiomaDAO iDAO = new IdiomaDAO();
-        private EstadoMaterialDAO emDAO = new EstadoMaterialDAO();
-        private TematicaDAO tDAO = new TematicaDAO();
-
         public MaterialDAO() {
         }
 
@@ -39,10 +34,10 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                     material.Autor = reader["AutorMaterial"].ToString().Trim();
                     material.FechaPublicacion = Convert.ToDateTime(reader["FechaPublicacion"].ToString().Trim());
                     material.Descripcion = reader["DescripcionMaterial"].ToString().Trim();
-                    material.Idioma = iDAO.BuscarPorId(iId);
-                    material.TipoMaterial = tmDAO.BuscarPorId(tmId);
-                    material.EstadoMaterial = emDAO.BuscarPorId(emId);
-                    material.Tematica = tDAO.BuscarPorId(tId);
+                    material.Idioma = DAO.IDAO.BuscarPorId(iId);
+                    material.TipoMaterial = DAO.TmDAO.BuscarPorId(tmId);
+                    material.EstadoMaterial = DAO.EmDAO.BuscarPorId(emId);
+                    material.Tematica = DAO.TDAO.BuscarPorId(tId);
 
                     switch (material.TipoMaterial.Id) { // Se revisa el tipo de material
                         case 1:

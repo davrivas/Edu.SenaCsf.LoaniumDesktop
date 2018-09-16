@@ -24,13 +24,11 @@ namespace Edu.SenaCsf.LoaniumDesktop.Presentacion {
         }
 
         private void button1_Click(object sender, EventArgs e) {
-            UsuarioDAO uDAO = new UsuarioDAO();
-            TipoDocumentoDAO tdDAO = new TipoDocumentoDAO();
             int tdId = Convert.ToInt32(comboBox1.SelectedValue.ToString().Trim());
-            TipoDocumentoDTO td = tdDAO.BuscarPorId(tdId);
+            TipoDocumentoDTO td = DAO.TdDAO.BuscarPorId(tdId);
             string documento = textBox1.Text.Trim(),
                 clave = textBox2.Text.Trim();
-            int usuario = uDAO.IniciarSesion(td, documento, clave);
+            int usuario = DAO.UDAO.IniciarSesion(td, documento, clave);
 
             switch (usuario) {
                 case 1:

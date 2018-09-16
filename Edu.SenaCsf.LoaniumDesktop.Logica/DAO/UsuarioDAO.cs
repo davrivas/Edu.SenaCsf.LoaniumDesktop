@@ -12,12 +12,16 @@ using System.Windows.Forms;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
     public class UsuarioDAO : IUsuarioDAO {
+        private TipoDocumentoDAO tdDAO = new TipoDocumentoDAO();
+        private TipoUsuarioDAO tuDAO = new TipoUsuarioDAO();
+        private EstadoUsuarioDAO euDAO = new EstadoUsuarioDAO();
+
+        public UsuarioDAO() {
+        }
+
         public UsuarioDTO BuscarPorId(int id) {
             try {
                 Conexion.Abrir();
-                TipoDocumentoDAO tdDAO = new TipoDocumentoDAO();
-                TipoUsuarioDAO tuDAO = new TipoUsuarioDAO();
-                EstadoUsuarioDAO euDAO = new EstadoUsuarioDAO();
                 string sql = "SELECT TOP (1) * " +
                     "FROM Usuario " +
                     "WHERE UsuarioId = " + id;
