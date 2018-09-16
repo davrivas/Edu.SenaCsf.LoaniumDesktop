@@ -7,13 +7,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica.Sesion {
-    public class SesionControlador {
+    public class Sesion {
         private static UsuarioDTO usuario;
 
         public static UsuarioDTO Usuario { get => usuario; set => usuario = value; }
-
-        public static void Iniciar() {
-            Conexion.Abrir();
-        }
     }
 }

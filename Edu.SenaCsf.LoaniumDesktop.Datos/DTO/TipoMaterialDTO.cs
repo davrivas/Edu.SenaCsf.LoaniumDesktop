@@ -8,19 +8,16 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos.DTO {
     public class TipoMaterialDTO {
         private int id;
         private string tipo;
-        private string sigla;
 
         public TipoMaterialDTO() {
         }
 
-        public TipoMaterialDTO(int id, string tipo, string sigla) {
+        public TipoMaterialDTO(int id, string tipo) {
             this.Id = id;
             this.Tipo = tipo;
-            this.Sigla = sigla;
         }
 
         public int Id { get => id; set => id = value; }
         public string Tipo { get => tipo; set => tipo = value; }
-        public string Sigla { get => sigla; set => sigla = value; }
     }
 }

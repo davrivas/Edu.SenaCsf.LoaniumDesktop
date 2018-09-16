@@ -95,7 +95,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
         }
 
         public void CerrarSesion() {
-            SesionControlador.Usuario = null;
+            Sesion.Sesion.Usuario = null;
             //Redirigir
         }
 
@@ -248,12 +248,12 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                     );
 
                     if (u.EstadoUsuario.Id == 1) {
-                        SesionControlador.Usuario = u;
+                        Sesion.Sesion.Usuario = u;
                         return 1;
                     } if (u.EstadoUsuario.Id == 2) {
                         return 2;
                     } else { 
-                        ReactivarCuenta(u);
+                        //ReactivarCuenta(u);
                         return 3;
                     }
                 } else {
@@ -367,7 +367,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                 if (cant == 1) {
                     MessageBox.Show("Registro realizado exitosamente");
                 } else {
-                    MessageBox.Show("ERROR: El registro fue realizado exitosamente");
+                    MessageBox.Show("ERROR: El registro no fue realizado exitosamente");
                 }
             } catch (SqlException e) {
                 Console.WriteLine(e.StackTrace);

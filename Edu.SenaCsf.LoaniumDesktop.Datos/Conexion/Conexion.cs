@@ -18,7 +18,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos.Conexion {
             try {
                 Cerrar();
                 Conn.Open();
-                MessageBox.Show("¡Conexión satisfactoria!");
+                //MessageBox.Show("¡Conexión satisfactoria!");
             } catch (SqlException e) {
                 Console.WriteLine(e.StackTrace);
                 MessageBox.Show("No se pudo conectar a la base de datos");

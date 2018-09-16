@@ -25,8 +25,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                 if (reader.Read()) {
                     TipoMaterialDTO tm = new TipoMaterialDTO(
                         Convert.ToInt32(reader["TipoMaterialId"].ToString().Trim()),
-                        reader["TipoMaterial"].ToString().Trim(),
-                        reader["SiglaTipoMaterial"].ToString().Trim()
+                        reader["TipoMaterial"].ToString().Trim()
                     );
                     return tm;
                 } else {
