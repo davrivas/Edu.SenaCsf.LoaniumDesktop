@@ -52,6 +52,12 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="NuevoMaterial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NuevoMaterial.Designer.cs">
+      <DependentUpon>NuevoMaterial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Registro.cs">
       <SubType>Form</SubType>
     </Compile>
