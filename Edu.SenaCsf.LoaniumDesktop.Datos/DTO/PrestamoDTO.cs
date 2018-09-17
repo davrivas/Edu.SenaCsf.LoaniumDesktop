@@ -11,18 +11,18 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos.DTO {
         private DateTime fechaDevolucion;
         private EstadoPrestamoDTO estadoPrestamo;
         private UsuarioDTO usuario;
-        private List<MaterialDTO> materiales;
+        private MaterialDTO material;
 
         public PrestamoDTO() {
         }
 
-        public PrestamoDTO(int id, DateTime fechaPrestamo, DateTime fechaDevolucion, EstadoPrestamoDTO estadoPrestamo, UsuarioDTO usuario, List<MaterialDTO> materiales) {
+        public PrestamoDTO(int id, DateTime fechaPrestamo, DateTime fechaDevolucion, EstadoPrestamoDTO estadoPrestamo, UsuarioDTO usuario, MaterialDTO material) {
             this.Id = id;
             this.FechaPrestamo = fechaPrestamo;
             this.FechaDevolucion = fechaDevolucion;
             this.EstadoPrestamo = estadoPrestamo;
             this.Usuario = usuario;
-            this.Materiales = materiales;
+            this.Material = material;
         }
 
         public int Id { get => id; set => id = value; }
@@ -30,6 +30,6 @@ namespace Edu.SenaCsf.LoaniumDesktop.Datos.DTO {
         public DateTime FechaDevolucion { get => fechaDevolucion; set => fechaDevolucion = value; }
         public EstadoPrestamoDTO EstadoPrestamo { get => estadoPrestamo; set => estadoPrestamo = value; }
         public UsuarioDTO Usuario { get => usuario; set => usuario = value; }
-        public List<MaterialDTO> Materiales { get => materiales; set => materiales = new List<MaterialDTO>(3); }
+        public MaterialDTO Material { get => material; set => material = value; }
     }
 }

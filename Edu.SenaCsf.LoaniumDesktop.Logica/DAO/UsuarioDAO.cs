@@ -210,7 +210,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                 if (cant == 1) {
                     MessageBox.Show("Usuario registrado exitosamente");
                 } else {
-                    MessageBox.Show("ERROR: El usuario no fue registrado exitosamente");
+                    MessageBox.Show("ERROR: El usuario no fue registrado");
                 }
             } catch (SqlException e) {
                 Console.WriteLine(e.StackTrace);
