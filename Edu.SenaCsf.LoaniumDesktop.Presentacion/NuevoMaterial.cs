@@ -37,6 +37,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Presentacion {
                     material.Issn = textBoxIsbn.Text.Trim();
                     break;
                 case 3:
+                case 4:
                     material.Duracion = textBoxDuracion.Text.Trim();
                     break;
             }

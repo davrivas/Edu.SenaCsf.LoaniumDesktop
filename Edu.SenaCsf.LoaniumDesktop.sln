@@ -10,7 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu.SenaCsf.LoaniumDesktop.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu.SenaCsf.LoaniumDesktop.Datos", "Edu.SenaCsf.LoaniumDesktop.Datos\Edu.SenaCsf.LoaniumDesktop.Datos.csproj", "{60738740-69E8-431F-AFCB-7D061F4189F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu.SenaCsf.LoaniumDesktop.Presentacion", "Edu.SenaCsf.LoaniumDesktop.Presentacion\Edu.SenaCsf.LoaniumDesktop.Presentacion.csproj", "{7AEA5284-F22D-47F6-956D-C26F99E4D45C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu.SenaCsf.LoaniumDesktop.Presentacion", "..\Loanium 5.0 Front-End\WindowsFormsApp1\WindowsFormsApp1\Edu.SenaCsf.LoaniumDesktop.Presentacion.csproj", "{21869092-FE83-494C-ABAE-80EDA1938F05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,10 +26,10 @@ Global
 		{60738740-69E8-431F-AFCB-7D061F4189F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60738740-69E8-431F-AFCB-7D061F4189F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60738740-69E8-431F-AFCB-7D061F4189F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{7AEA5284-F22D-47F6-956D-C26F99E4D45C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{7AEA5284-F22D-47F6-956D-C26F99E4D45C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{7AEA5284-F22D-47F6-956D-C26F99E4D45C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{7AEA5284-F22D-47F6-956D-C26F99E4D45C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21869092-FE83-494C-ABAE-80EDA1938F05}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21869092-FE83-494C-ABAE-80EDA1938F05}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21869092-FE83-494C-ABAE-80EDA1938F05}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21869092-FE83-494C-ABAE-80EDA1938F05}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

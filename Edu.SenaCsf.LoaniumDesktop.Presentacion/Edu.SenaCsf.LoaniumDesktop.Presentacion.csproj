@@ -96,12 +96,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="UsuariosCRUD.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UsuariosCRUD.Designer.cs">
-      <DependentUpon>UsuariosCRUD.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -119,10 +113,8 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="UsuariosCRUD.resx">
-      <DependentUpon>UsuariosCRUD.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="IdiomaDataSet.xsc">
       <DependentUpon>IdiomaDataSet.xsd</DependentUpon>
     </None>
