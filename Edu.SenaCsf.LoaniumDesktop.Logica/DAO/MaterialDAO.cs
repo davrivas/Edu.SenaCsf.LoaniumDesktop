@@ -84,7 +84,36 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
         }
 
         public void Ingresar(MaterialDTO obj) {
-            throw new NotImplementedException();
+            try {
+                Conexion.Abrir();
+                string sql = "INSERT INTO Material VALUES" +
+                    "('" + obj.Titulo.Trim() + "', " +
+                    "'"+ obj.Autor.Trim() +"', " +
+                    "'" + obj.FechaPublicacion.ToShortDateString().Trim() + "', " +
+                    "'" + obj.Descripcion.Trim() + "', " +
+                    "'" + obj.Isbn.Trim() + "', " +
+                    "'" + obj.Editorial.Trim() + "', " +
+                    "'" + obj.Issn.Trim() + "', " +
+                    "'" + obj.Duracion.Trim() + "', " +
+                    obj.Idioma.Id + ", " +
+                    obj.Tematica.Id + ", " +
+                    obj.TipoMaterial.Id + ", " +
+                    "1)";
+                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
+                int cant = cmd.ExecuteNonQuery();
+
+                if (cant == 1) {
+                    MessageBox.Show(obj.TipoMaterial.Tipo + " registrado exitosamente");
+                } else {
+                    MessageBox.Show("ERROR: El " + obj.TipoMaterial.Tipo + " no fue registrado exitosamente");
+                }
+            } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
+            } finally {
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
+            }
         }
     }
 }

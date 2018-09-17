@@ -51,11 +51,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IdiomaDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="LoaniumDataSet.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>LoaniumDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,17 +114,6 @@
     </None>
     <None Include="IdiomaDataSet.xss">
       <DependentUpon>IdiomaDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LoaniumDataSet.xsc">
-      <DependentUpon>LoaniumDataSet.xsd</DependentUpon>
-    </None>
-    <None Include="LoaniumDataSet.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>LoaniumDataSet.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="LoaniumDataSet.xss">
-      <DependentUpon>LoaniumDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

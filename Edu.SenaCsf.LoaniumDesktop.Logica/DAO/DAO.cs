@@ -14,6 +14,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
         private static EstadoPrestamoDAO epDAO = new EstadoPrestamoDAO();
         private static EstadoUsuarioDAO euDAO = new EstadoUsuarioDAO();
         private static IdiomaDAO iDAO = new IdiomaDAO();
+        private static MaterialDAO mDAO = new MaterialDAO();
         private static PQRSDAO pqrsDAO = new PQRSDAO();
         private static PrestamoDAO pDAO = new PrestamoDAO();
         private static SuspensionDAO sDAO = new SuspensionDAO();
@@ -31,6 +32,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
         public static EstadoPrestamoDAO EpDAO { get => epDAO; set => epDAO = value; }
         public static EstadoUsuarioDAO EuDAO { get => euDAO; set => euDAO = value; }
         public static IdiomaDAO IDAO { get => iDAO; set => iDAO = value; }
+        public static MaterialDAO MDAO { get => mDAO; set => mDAO = value; }
         public static PQRSDAO PqrsDAO { get => pqrsDAO; set => pqrsDAO = value; }
         public static PrestamoDAO PDAO { get => pDAO; set => pDAO = value; }
         public static SuspensionDAO SDAO { get => sDAO; set => sDAO = value; }
