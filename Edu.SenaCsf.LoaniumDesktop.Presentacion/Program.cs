@@ -13,7 +13,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Presentacion {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new NuevoMaterial());
+            Application.Run(new UsuariosCRUD());
         }
     }
 }

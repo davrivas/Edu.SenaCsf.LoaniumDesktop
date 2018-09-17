@@ -51,6 +51,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>IdiomaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="LoaniumDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>LoaniumDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +91,17 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>TipoMaterialDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="UsuarioDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UsuariosCRUD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UsuariosCRUD.Designer.cs">
+      <DependentUpon>UsuariosCRUD.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -104,6 +120,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UsuariosCRUD.resx">
+      <DependentUpon>UsuariosCRUD.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="IdiomaDataSet.xsc">
       <DependentUpon>IdiomaDataSet.xsd</DependentUpon>
     </None>
@@ -114,6 +133,17 @@
     </None>
     <None Include="IdiomaDataSet.xss">
       <DependentUpon>IdiomaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LoaniumDataSet.xsc">
+      <DependentUpon>LoaniumDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="LoaniumDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>LoaniumDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="LoaniumDataSet.xss">
+      <DependentUpon>LoaniumDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -156,6 +186,17 @@
     </None>
     <None Include="TipoMaterialDataSet.xss">
       <DependentUpon>TipoMaterialDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UsuarioDataSet.xsc">
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="UsuarioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>UsuarioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="UsuarioDataSet.xss">
+      <DependentUpon>UsuarioDataSet.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
