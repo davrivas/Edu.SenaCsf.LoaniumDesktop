@@ -1,6 +1,5 @@
 ﻿using Edu.SenaCsf.LoaniumDesktop.Datos.Conexion;
 using Edu.SenaCsf.LoaniumDesktop.Datos.DTO;
-using Edu.SenaCsf.LoaniumDesktop.Logica.Sesion;
 using Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO;
 using System;
 using System.Collections.Generic;
@@ -12,10 +11,6 @@ using System.Windows.Forms;
 
 namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
     public class UsuarioDAO : IUsuarioDAO {
-        private TipoDocumentoDAO tdDAO = new TipoDocumentoDAO();
-        private TipoUsuarioDAO tuDAO = new TipoUsuarioDAO();
-        private EstadoUsuarioDAO euDAO = new EstadoUsuarioDAO();
-
         public UsuarioDAO() {
         }
 
@@ -41,9 +36,9 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                         reader["CorreoElectronico"].ToString().Trim(),
                         reader["Clave"].ToString().Trim(),
                         reader["Telefono"].ToString().Trim(),
-                        tdDAO.BuscarPorId(tdId),
-                        tuDAO.BuscarPorId(tuId),
-                        euDAO.BuscarPorId(euId)
+                        DAO.TdDAO.BuscarPorId(tdId),
+                        DAO.TuDAO.BuscarPorId(tuId),
+                        DAO.EuDAO.BuscarPorId(euId)
                     );
                 } else {
                     return null;
@@ -221,14 +216,12 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
             }
         }
 
-        public int IniciarSesion(TipoDocumentoDTO td, string documento, string clave) {
+        public int IniciarSesion(int td, string documento, string clave) {
             try {
                 Conexion.Abrir();
-                TipoUsuarioDAO tuDAO = new TipoUsuarioDAO();
-                EstadoUsuarioDAO euDAO = new EstadoUsuarioDAO();
                 string sql = "SELECT TOP (1) * " +
                     "FROM Usuario " +
-                    "WHERE TipoDocumentoId = " + td.Id +" " +
+                    "WHERE TipoDocumentoId = " + td +" " +
                     "AND Documento = '" + documento + "' " +
                     "AND Clave = '" + clave + "'";
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
@@ -246,9 +239,9 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                         reader["CorreoElectronico"].ToString().Trim(),
                         reader["Clave"].ToString().Trim(),
                         reader["Telefono"].ToString().Trim(),
-                        td,
-                        tuDAO.BuscarPorId(tuId),
-                        euDAO.BuscarPorId(euId)
+                        DAO.TdDAO.BuscarPorId(td),
+                        DAO.TuDAO.BuscarPorId(tuId),
+                        DAO.EuDAO.BuscarPorId(euId)
                     );
 
                     if (u.EstadoUsuario.Id == 1) {
