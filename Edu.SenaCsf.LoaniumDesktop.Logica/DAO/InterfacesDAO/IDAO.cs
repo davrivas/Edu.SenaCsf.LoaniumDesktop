@@ -10,5 +10,6 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO {
         void Editar(T obj);
         void Eliminar(T obj);
         T BuscarPorId(int id);
+        int Contar();
     }
 }

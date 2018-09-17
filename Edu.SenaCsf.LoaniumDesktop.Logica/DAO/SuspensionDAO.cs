@@ -16,6 +16,10 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
             throw new NotImplementedException();
         }
 
+        public int Contar() {
+            throw new NotImplementedException();
+        }
+
         public void Editar(SuspensionDTO obj) {
             throw new NotImplementedException();
         }

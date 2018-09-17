@@ -98,6 +98,10 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
             //Redirigir
         }
 
+        public int Contar() {
+            throw new NotImplementedException();
+        }
+
         public void Editar(UsuarioDTO obj) {
             try {
                 Conexion.Abrir();
@@ -354,7 +358,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                     "'" + u.FechaNacimiento.ToShortDateString().Trim() + "', " +
                     "'" + u.CorreoElectronico.Trim() + "', " +
                     "'" + u.Clave.Trim() + "', " +
-                    "'" + u.Telefono.Trim() + "', " +
+                    (u.Telefono.Trim().Equals("") ? "NULL" : "'" + u.Telefono.Trim() +"'") + ", " +
                     "2, " +
                     u.TipoDocumento.Id + ", " +
                     "1)";
@@ -362,7 +366,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                 int cant = cmd.ExecuteNonQuery();
 
                 if (cant == 1) {
-                    MessageBox.Show("Registro realizado exitosamente");
+                    MessageBox.Show("Registro de usuario realizado exitosamente");
                 } else {
                     MessageBox.Show("ERROR: El registro no fue realizado exitosamente");
                 }

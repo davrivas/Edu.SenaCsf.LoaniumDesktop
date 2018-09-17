@@ -41,6 +41,10 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
             }
         }
 
+        public int Contar() {
+            throw new NotImplementedException();
+        }
+
         public void Editar(EstadoPQRSDTO obj) {
             throw new NotImplementedException();
         }
