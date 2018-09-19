@@ -79,6 +79,90 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
             throw new NotImplementedException();
         }
 
+        public int ContarDiscos() {
+            try {
+                Conexion.Abrir();
+                string sql = "SELECT COUNT(*) AS Discos " +
+                    "FROM Material " +
+                    "WHERE TipoMaterialId = 3 OR TipoMaterialId = 4";
+                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read()) {
+                    int cont = 0;
+                    while (reader.Read()) {
+                        cont++;
+                    }
+                    return cont;
+                } else {
+                    return 0;
+                }
+            } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
+                return 0;
+            } finally {
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
+            }
+        }
+
+        public int ContarLibros() {
+            try {
+                Conexion.Abrir();
+                string sql = "SELECT * " +
+                    "FROM Material " +
+                    "WHERE TipoMaterialId = 1";
+                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read()) {
+                    int cont = 0;
+                    while (reader.Read()) {
+                        cont++;
+                    }
+                    return cont;
+                } else {
+                    return 0;
+                }
+            } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
+                return 0;
+            } finally {
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
+            }
+        }
+
+        public int ContarRevistas() {
+            try {
+                Conexion.Abrir();
+                string sql = "SELECT * " +
+                    "FROM Material " +
+                    "WHERE TipoMaterialId = 2";
+                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read()) {
+                    int cont = 0;
+                    while (reader.Read()) {
+                        cont++;
+                    }
+                    return cont;
+                } else {
+                    return 0;
+                }
+            } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
+                return 0;
+            } finally {
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
+            }
+        }
+
         public void Editar(MaterialDTO obj) {
             throw new NotImplementedException();
         }

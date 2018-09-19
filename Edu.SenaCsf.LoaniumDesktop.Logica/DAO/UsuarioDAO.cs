@@ -99,7 +99,30 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
         }
 
         public int Contar() {
-            throw new NotImplementedException();
+            try {
+                Conexion.Abrir();
+                string sql = "SELECT COUNT(*) AS Usuarios " +
+                    "FROM Usuarios";
+                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
+                SqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read()) {
+                    int cont = 0;
+                    while (reader.Read()) {
+                        cont++;
+                    }
+                    return cont;
+                } else {
+                    return 0;
+                }
+            } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
+                return 0;
+            } finally {
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
+            }
         }
 
         public void Editar(UsuarioDTO obj) {

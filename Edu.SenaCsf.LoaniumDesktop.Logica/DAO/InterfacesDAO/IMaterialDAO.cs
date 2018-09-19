@@ -9,5 +9,8 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO {
     public interface IMaterialDAO : IDAO<MaterialDTO> {
         List<MaterialDTO> BusquedaSimple(string texto);
         List<MaterialDTO> BusquedaAvanzada(string texto, IdiomaDTO i, TipoMaterialDTO tm);
+        int ContarLibros();
+        int ContarRevistas();
+        int ContarDiscos();
     }
 }
