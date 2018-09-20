@@ -4,6 +4,7 @@ using Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,15 +25,15 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                 SqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read()) {
-                    int tdId = Convert.ToInt32(reader["TipoDocumentoId"].ToString().Trim()),
-                        tuId = Convert.ToInt32(reader["TipoUsuarioId"].ToString().Trim()),
-                        euId = Convert.ToInt32(reader["EstadoUsuarioId"].ToString().Trim());
-                    return new UsuarioDTO ( 
-                        Convert.ToInt32(reader["UsuarioId"].ToString()),
+                    int tdId = Convert.ToInt32(reader["TipoDocumentoId"]),
+                        tuId = Convert.ToInt32(reader["TipoUsuarioId"]),
+                        euId = Convert.ToInt32(reader["EstadoUsuarioId"]);
+                    return new UsuarioDTO (
+                        Convert.ToInt32(reader["UsuarioId"]),
                         reader["Nombres"].ToString().Trim(),
                         reader["Apellidos"].ToString().Trim(),
                         reader["Documento"].ToString().Trim(),
-                        Convert.ToDateTime(reader["FechaNacimiento"].ToString().Trim()),
+                        Convert.ToDateTime(reader["FechaNacimiento"]),
                         reader["CorreoElectronico"].ToString().Trim(),
                         reader["Clave"].ToString().Trim(),
                         reader["Telefono"].ToString().Trim(),
@@ -101,20 +102,11 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
         public int Contar() {
             try {
                 Conexion.Abrir();
-                string sql = "SELECT COUNT(*) AS Usuarios " +
+                string sql = "SELECT COUNT(*) " +
                     "FROM Usuarios";
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
-                SqlDataReader reader = cmd.ExecuteReader();
-
-                if (reader.Read()) {
-                    int cont = 0;
-                    while (reader.Read()) {
-                        cont++;
-                    }
-                    return cont;
-                } else {
-                    return 0;
-                }
+                // Revisar mas tarde bien
+                return 0;
             } catch (SqlException e) {
                 Console.WriteLine(e.StackTrace);
                 return 0;
