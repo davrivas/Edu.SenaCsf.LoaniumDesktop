@@ -96,7 +96,6 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
 
         public void CerrarSesion() {
             Sesion.Sesion.Usuario = null;
-            //Redirigir
         }
 
         public int Contar() {
@@ -363,7 +362,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
             }
         }
 
-        public void Registrarse(UsuarioDTO u) {
+        public int Registrarse(UsuarioDTO u) {
             try {
                 Conexion.Abrir();
                 string sql = "INSERT INTO Usuario VALUES" +
@@ -379,14 +378,10 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                     "1)";
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 int cant = cmd.ExecuteNonQuery();
-
-                if (cant == 1) {
-                    MessageBox.Show("Registro de usuario realizado exitosamente");
-                } else {
-                    MessageBox.Show("ERROR: El registro no fue realizado exitosamente");
-                }
+                return cant;
             } catch (SqlException e) {
                 Console.WriteLine(e.StackTrace);
+                return 0;
             } finally {
                 if (Conexion.Conn != null) {
                     Conexion.Cerrar();
