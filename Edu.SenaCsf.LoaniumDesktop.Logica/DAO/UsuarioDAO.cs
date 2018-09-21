@@ -1,6 +1,7 @@
 ﻿using Edu.SenaCsf.LoaniumDesktop.Datos.Conexion;
 using Edu.SenaCsf.LoaniumDesktop.Datos.DTO;
 using Edu.SenaCsf.LoaniumDesktop.Logica.DAO.InterfacesDAO;
+using Edu.SenaCsf.LoaniumDesktop.Logica.UtilLogica;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -94,9 +95,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
             }
         }
 
-        public void CerrarSesion() {
-            Sesion.Sesion.Usuario = null;
-        }
+        public void CerrarSesion() => UtilLogica.UtilLogica.UsuarioSesion = null;
 
         public int Contar() {
             try {
@@ -263,7 +262,7 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                     );
 
                     if (u.EstadoUsuario.Id == 1) {
-                        Sesion.Sesion.Usuario = u;
+                        UtilLogica.UtilLogica.UsuarioSesion = u;
                         return 1;
                     } if (u.EstadoUsuario.Id == 2) {
                         return 2;

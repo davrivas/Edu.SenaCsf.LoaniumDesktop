@@ -174,26 +174,27 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
         public void Ingresar(MaterialDTO obj) {
             try {
                 Conexion.Abrir();
+                MaterialDTO nuevoMaterial = obj;
                 string sql = "INSERT INTO Material VALUES" +
-                    "('" + obj.Titulo.Trim() + "', " +
-                    "'"+ obj.Autor.Trim() +"', " +
-                    "'" + obj.FechaPublicacion.ToShortDateString().Trim() + "', " +
-                    "'" + obj.Descripcion.Trim() + "', " +
-                    "'" + obj.Isbn.Trim() + "', " +
-                    "'" + obj.Editorial.Trim() + "', " +
-                    "'" + obj.Issn.Trim() + "', " +
-                    "'" + obj.Duracion.Trim() + "', " +
-                    obj.Idioma.Id + ", " +
-                    obj.Tematica.Id + ", " +
-                    obj.TipoMaterial.Id + ", " +
+                    "('" + nuevoMaterial.Titulo.Trim() + "', " +
+                    "'"+ nuevoMaterial.Autor.Trim() +"', " +
+                    "'" + nuevoMaterial.FechaPublicacion.ToShortDateString().Trim() + "', " +
+                    "'" + nuevoMaterial.Descripcion.Trim() + "', " +
+                    (nuevoMaterial.Isbn.Trim().Equals("") ? "NULL" : "'" + nuevoMaterial.Isbn.Trim() + "'") + ", " +
+                    (nuevoMaterial.Editorial.Trim().Equals("") ? "NULL" : "'" + nuevoMaterial.Editorial.Trim() + "'") + ", " +
+                    (nuevoMaterial.Issn.Trim().Equals("") ? "NULL" : "'" + nuevoMaterial.Issn.Trim() + "'") + ", " +
+                    (nuevoMaterial.Duracion.Trim().Equals("") ? "NULL" : "'" + nuevoMaterial.Duracion.Trim() + "'") + ", " +
+                    nuevoMaterial.Idioma.Id + ", " +
+                    nuevoMaterial.Tematica.Id + ", " +
+                    nuevoMaterial.TipoMaterial.Id + ", " +
                     "1)";
                 SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
                 int cant = cmd.ExecuteNonQuery();
 
                 if (cant == 1) {
-                    MessageBox.Show(obj.TipoMaterial.Tipo + " registrado exitosamente");
+                    MessageBox.Show(nuevoMaterial.TipoMaterial.Tipo + " registrado exitosamente");
                 } else {
-                    MessageBox.Show("ERROR: El " + obj.TipoMaterial.Tipo + " no fue registrado exitosamente");
+                    MessageBox.Show("ERROR: El " + nuevoMaterial.TipoMaterial.Tipo + " no fue registrado exitosamente");
                 }
             } catch (SqlException e) {
                 Console.WriteLine(e.StackTrace);
