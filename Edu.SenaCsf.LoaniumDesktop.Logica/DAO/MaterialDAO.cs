@@ -34,27 +34,18 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
                     material.Autor = reader["AutorMaterial"].ToString().Trim();
                     material.FechaPublicacion = Convert.ToDateTime(reader["FechaPublicacion"].ToString().Trim());
                     material.Descripcion = reader["DescripcionMaterial"].ToString().Trim();
+                    material.Isbn = reader["Isbn"].ToString().Trim();
+                    material.Editorial = reader["Editorial"].ToString().Trim();
+                    material.Issn = reader["Issn"].ToString().Trim();
+                    material.Duracion = reader["Duracion"].ToString().Trim();
                     material.Idioma = DAO.IDAO.BuscarPorId(iId);
                     material.TipoMaterial = DAO.TmDAO.BuscarPorId(tmId);
                     material.EstadoMaterial = DAO.EmDAO.BuscarPorId(emId);
                     material.Tematica = DAO.TDAO.BuscarPorId(tId);
 
-                    switch (material.TipoMaterial.Id) { // Se revisa el tipo de material
-                        case 1:
-                            material.Isbn = reader["Isbn"].ToString().Trim();
-                            material.Editorial = reader["Editorial"].ToString().Trim();
-                            break;
-                        case 2:
-                            material.Issn = reader["Issn"].ToString().Trim();
-                            break;
-                        default:
-                            material.Duracion = reader["Duracion"].ToString().Trim();
-                            break;
-                    }
-
                     return material;
                 } else {
-                    MessageBox.Show("No se encontró disco");
+                    MessageBox.Show("No se encontró material");
                     return null;
                 }
             } catch (SqlException e) {
@@ -164,11 +155,61 @@ namespace Edu.SenaCsf.LoaniumDesktop.Logica.DAO {
         }
 
         public void Editar(MaterialDTO obj) {
-            throw new NotImplementedException();
+            try {
+                Conexion.Abrir();
+                MaterialDTO nuevoMaterial = obj;
+                string sql = "UPDATE Material VALUES" +
+                    "('" + nuevoMaterial.Titulo.Trim() + "', " +
+                    "'" + nuevoMaterial.Autor.Trim() + "', " +
+                    "'" + nuevoMaterial.FechaPublicacion.ToShortDateString().Trim() + "', " +
+                    "'" + nuevoMaterial.Descripcion.Trim() + "', " +
+                    (nuevoMaterial.Isbn.Trim().Equals("") ? "NULL" : "'" + nuevoMaterial.Isbn.Trim() + "'") + ", " +
+                    (nuevoMaterial.Editorial.Trim().Equals("") ? "NULL" : "'" + nuevoMaterial.Editorial.Trim() + "'") + ", " +
+                    (nuevoMaterial.Issn.Trim().Equals("") ? "NULL" : "'" + nuevoMaterial.Issn.Trim() + "'") + ", " +
+                    (nuevoMaterial.Duracion.Trim().Equals("") ? "NULL" : "'" + nuevoMaterial.Duracion.Trim() + "'") + ", " +
+                    nuevoMaterial.Idioma.Id + ", " +
+                    nuevoMaterial.Tematica.Id + ", " +
+                    nuevoMaterial.TipoMaterial.Id + ", " +
+                    "1) " +
+                    "WHERE MaterialId = " + obj.Id;
+                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
+                int cant = cmd.ExecuteNonQuery();
+
+                if (cant == 1) {
+                    MessageBox.Show(nuevoMaterial.TipoMaterial.Tipo + " editado exitosamente");
+                } else {
+                    MessageBox.Show("ERROR: El " + nuevoMaterial.TipoMaterial.Tipo + " no fue editado exitosamente");
+                }
+            } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
+            } finally {
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
+            }
         }
 
         public void Eliminar(MaterialDTO obj) {
-            throw new NotImplementedException();
+            try {
+                Conexion.Abrir();
+                MaterialDTO nuevoMaterial = obj;
+                string sql = "DELETE FROM Material " +
+                    "WHERE MaterialId = " + obj.Id;
+                SqlCommand cmd = new SqlCommand(sql, Conexion.Conn);
+                int cant = cmd.ExecuteNonQuery();
+
+                if (cant == 1) {
+                    MessageBox.Show(nuevoMaterial.TipoMaterial.Tipo + " eliminado exitosamente");
+                } else {
+                    MessageBox.Show("ERROR: El " + nuevoMaterial.TipoMaterial.Tipo + " no fue eliminado exitosamente");
+                }
+            } catch (SqlException e) {
+                Console.WriteLine(e.StackTrace);
+            } finally {
+                if (Conexion.Conn != null) {
+                    Conexion.Cerrar();
+                }
+            }
         }
 
         public void Ingresar(MaterialDTO obj) {
