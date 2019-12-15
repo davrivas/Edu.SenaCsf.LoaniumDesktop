@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.27703.2047
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28922.388
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu.SenaCsf.LoaniumDesktop.Logica", "Edu.SenaCsf.LoaniumDesktop.Logica\Edu.SenaCsf.LoaniumDesktop.Logica.csproj", "{EC3A00B1-462C-4494-AB91-BD5644D0F7F5}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -10,10 +10,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu.SenaCsf.LoaniumDesktop.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu.SenaCsf.LoaniumDesktop.Datos", "Edu.SenaCsf.LoaniumDesktop.Datos\Edu.SenaCsf.LoaniumDesktop.Datos.csproj", "{60738740-69E8-431F-AFCB-7D061F4189F8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu.SenaCsf.LoaniumDesktop.Presentacion", "..\Loanium 5.0 Front-End\WindowsFormsApp1\WindowsFormsApp1\Edu.SenaCsf.LoaniumDesktop.Presentacion.csproj", "{21869092-FE83-494C-ABAE-80EDA1938F05}"
-	ProjectSection(ProjectDependencies) = postProject
-		{EC3A00B1-462C-4494-AB91-BD5644D0F7F5} = {EC3A00B1-462C-4494-AB91-BD5644D0F7F5}
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edu.SenaCsf.LoaniumDesktop.Presentacion", "Loanium Front-End\WindowsFormsApp1\WindowsFormsApp1\Edu.SenaCsf.LoaniumDesktop.Presentacion.csproj", "{21869092-FE83-494C-ABAE-80EDA1938F05}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
